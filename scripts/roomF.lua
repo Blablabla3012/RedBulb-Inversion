@@ -1,5 +1,5 @@
 local roomF = {}
-local data = require("RedBulbFiles.data")
+local data = require("scripts.data")
 local level = Game():GetLevel()
 
 
