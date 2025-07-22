@@ -30,7 +30,7 @@ function dataHolder:GetRightEntityData()
 	return end
 
 	for i, entity in ipairs(Isaac.GetRoomEntities()) do
-		if entity.Type ~= 5 or entity.Variant ~= 100 then
+		if entity.Type == 5 and entity.Variant == 100 then
 			dataHolder:GetEntityData(entity)
 		
 			local ptrHash = GetPtrHash(entity)
