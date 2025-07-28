@@ -4,15 +4,15 @@ needs repentogon
 Key peaces are optained by bombing the fallen angels (in room?)
 
 # Demonic Angel:
-Type:		14 Devil Deal
-Items:		angel pool
-		take x-items, shop:gives broken hearts ✅
+Type:		14 Devil Deal \
+Items:		angel pool \
+		take x-items, shop:gives broken hearts ✅ \
 		taking doesn't block angel ✅
 
 # Angelic Devil:
-Type:		15 Angel Room
-Items:		devil pool
-		take one item, free ✅
+Type:		15 Angel Room \
+Items:		devil pool \
+		take one item, free ✅ \
 		taking blocks angel 
 
 # ToDo:
@@ -34,5 +34,5 @@ Black Maw - > Holy Leech \
 Black Gobin's Head - > Angelic Mulligun \
 Wizoob should be unchanged \
 Soul Sucker - > Bulb \
-Bloodshot Eye - > Holy Eye \
+Bloodshot Eye - > Holy Eye 
 
