@@ -1,6 +1,6 @@
 local itemsF = {}
-local data = require("RedBulbFiles.data")
-local dataHolder = require("RedBulbFiles.dataHolder")
+local data = require("scripts.data")
+local dataHolder = require("scripts.dataHolder")
 local level = Game():GetLevel()
 
 
@@ -15,35 +15,7 @@ function itemsF:devilFree(pickup, variant)
 	if variant ~= 100 or not (pickup.Price < 0 and pickup.Price > -10) then
 	return end
 
-	dataHolder:GetEntityData(pickup)
-
-	local price = pickup.Price
-	local bHPrice = 1
-	if price == -1 then
-		bHPrice = 1
-	elseif price == -2 then
-		bHPrice = 2
-	elseif price == -3 then
-		bHPrice = 2
-	elseif price == -4 then
-		bHPrice = 2
-	elseif price == -5 then --spikes -> "A pound of flesh" collectible
-		bHPrice = 0
-	elseif price == -6 then -- soul -> "your soul" trinket
-		bHPrice = 0
-	elseif price == -7 then
-		bHPrice = 1
-	elseif price == -8 then
-		bHPrice = 2
-	elseif price == -9 then
-		bHPrice = 2
-	end	
-
-	local ptrHash = GetPtrHash(pickup)
-	dataHolder.Data[ptrHash].brokenHeartsPrice = bHPrice
 	pickup.Price = 0
-	
-	dataHolder.Data[ptrHash].position = pickup.Position
 end
 
 
@@ -60,7 +32,7 @@ function itemsF:devilBrokenHearts(player, entity)
 	return end
 	
 	dataHolder.Data[ptrHash].touched = true
-	player:AddBrokenHearts(entityData.brokenHeartsPrice)
+	player:AddBrokenHearts(1)
 end
 
 
@@ -79,16 +51,20 @@ function itemsF:renderBrokenHeartsSprite()
 		local ptrHash = GetPtrHash(entity)
 		local entityData = dataHolder.Data[ptrHash]
 
-		print(entityData)
 		if entityData ~= nil then
+			if entityData.touched == false then
 
-			local screenPosition = Isaac.WorldToScreen(entityData.position)
-			screenPosition.Y = screenPosition.Y - 10
+				local screenPosition = Isaac.WorldToScreen(entityData.position)
+				local offset = {}
+				offset.Y = -10
+				offset.X = 3
+				screenPosition.Y = screenPosition.Y + offset.Y
+				screenPosition.X = screenPosition.X + offset.X
 
-			brokenHeartSprite:Update()
-			brokenHeartSprite:Render(screenPosition)
+				brokenHeartSprite:Update()
+				brokenHeartSprite:Render(screenPosition)
 
-	end end
+	end end end
 end
 
 
