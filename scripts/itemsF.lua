@@ -22,17 +22,14 @@ end
 function itemsF:devilBrokenHearts(player, entity)
 	if not data.doInversion or entity.Type ~= 5 or entity.Variant ~= 100 then
 	return end
-	print("first conditions met")
 
 	local ptrHash = GetPtrHash(entity)
 	local entityData = dataHolder.Data[ptrHash]
 	if entityData == nil then
 	return end
-	print("entityData not nil")
 	
 	if entityData.touched then
 	return end
-	print("entityData.touched not true")
 	
 	dataHolder.Data[ptrHash].touched = true
 	player:AddBrokenHearts(1)
@@ -45,29 +42,29 @@ brokenHeartSprite:Play("BrokenHeart", true)
 function itemsF:renderBrokenHeartsSprite()
 	if not data.doInversion then
 	return end
-	--print("----------------")
-	--print (data.doInversion)
 
 	local roomDescData = level:GetCurrentRoomDesc().Data
 	if roomDescData.Type ~= RoomType.ROOM_DEVIL or roomDescData.Subtype ~= data.roomIds.demonicAngelSubtypeId then
 	return end
-	--print("pre for loop")
 
 	for i, entity in ipairs(Isaac.GetRoomEntities()) do
 		local ptrHash = GetPtrHash(entity)
 		local entityData = dataHolder.Data[ptrHash]
 
-		print(entityData)
 		if entityData ~= nil then
-			--print("entityData not nil")
+			if entityData.touched == false then
 
-			local screenPosition = Isaac.WorldToScreen(entityData.position)
-			screenPosition.Y = screenPosition.Y - 10
+				local screenPosition = Isaac.WorldToScreen(entityData.position)
+				local offset = {}
+				offset.Y = -10
+				offset.X = 3
+				screenPosition.Y = screenPosition.Y + offset.Y
+				screenPosition.X = screenPosition.X + offset.X
 
-			brokenHeartSprite:Update()
-			brokenHeartSprite:Render(screenPosition)
+				brokenHeartSprite:Update()
+				brokenHeartSprite:Render(screenPosition)
 
-	end end
+	end end end
 end
 
 

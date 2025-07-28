@@ -17,7 +17,7 @@ rbMod:AddCallback(ModCallbacks.MC_PRE_NEW_ROOM, roomF.swapItemRoomPools)
 local itemsF = require("scripts.itemsF")
 rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_SELECTION, itemsF.devilFree)
 rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, itemsF.devilBrokenHearts)
---rbMod:AddCallback(ModCallbacks.MC_POST_RENDER, itemsF.renderBrokenHeartsSprite)
+rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_RENDER, itemsF.renderBrokenHeartsSprite)
 
 
 
