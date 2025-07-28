@@ -16,12 +16,12 @@ Items:		devil pool \
 		taking blocks angel 
 
 # ToDo:
-door chaos
-sanguine bond spikes in demonic Stairway?
-	-> https://wofsauge.github.io/IsaacDocs/rep/GridEntity.html#vardata
-modify sanguine bond
-switch sprites
-greed --maybe done?
+door chaos \
+sanguine bond spikes in demonic Stairway? \
+	-> https://wofsauge.github.io/IsaacDocs/rep/GridEntity.html#vardata \
+modify sanguine bond \
+switch sprites \
+greed --maybe done? \
 room for sheal/cathedral even without unlocked --maybe done?
 
 # Basement Renovator:
