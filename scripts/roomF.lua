@@ -95,4 +95,8 @@ function roomF:blockDemonicAngel(player, entity)
 end
 
 
+function roomF:giveSanguineBondEffect()
+end
+
+
 return roomF
