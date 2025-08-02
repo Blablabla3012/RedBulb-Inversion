@@ -17,7 +17,7 @@ Items:		devil pool \
 
 # ToDo:
 sanguine bond spikes in demonic Stairway? \
-> -> https://wofsauge.github.io/IsaacDocs/rep/GridEntity.html#vardata \
+> give sanguine bond effect when entering stairway -> https://repentogon.com/EntityPlayer.html?h=add+innate+colle#void-addinnatecollectible-collectibletype-collectible-int-amount-1 \
 modify sanguine bond \
 switch sprites \
 > door chaos \

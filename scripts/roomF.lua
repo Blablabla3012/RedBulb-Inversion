@@ -5,8 +5,11 @@ local level = game:GetLevel()
 
 
 function roomF:swapRoomlayoutPools(index, dimension)
-    if index ~= -1 or not data.doInversion then
+	print("test")
+	print(index)
+    if (index ~= -1 and index ~= -18) or not data.doInversion then --index: -1 = devil/angel, -18 = stairway
     return end
+	print("test2")
 
     local roomDesc = level:GetRoomByIdx(index, dimension)
     local newRoomData = nil
@@ -36,6 +39,7 @@ function roomF:swapRoomlayoutPools(index, dimension)
                 roomIds.angelicDevilSubtypeId)
         end
     elseif roomDesc.Data.Type == RoomType.ROOM_ANGEL then
+		print("angel room detected")
         if roomDesc.Data.Subtype == 0 then
             newRoomData = RoomConfigHolder.GetRandomRoom(
                 roomDesc.SpawnSeed, false, StbType.SPECIAL_ROOMS,
@@ -44,6 +48,9 @@ function roomF:swapRoomlayoutPools(index, dimension)
                 0,10,0,
                 roomIds.demonicAngelSubtypeId)
         elseif roomDesc.Data.Subtype == 1 then
+			print("subtype == 1")
+			print(roomDesc.Data.Type .. roomDesc.Data.Subtype)
+			print(roomIds.demonicAngelStairwayIdMin .. roomIds.demonicAngelStairwayIdMax .. roomIds.demonicAngelStairwaySubtypeId)
             newRoomData = RoomConfigHolder.GetRandomRoom(
                 roomDesc.SpawnSeed, false, StbType.SPECIAL_ROOMS,
                 RoomType.ROOM_DEVIL, RoomShape.ROOMSHAPE_1x1,
@@ -60,7 +67,7 @@ function roomF:swapRoomlayoutPools(index, dimension)
         end
     else return end
 
-    roomDesc.Data = newRoomData or roomDesc.Data
+    roomDesc.Data = newRoomData --or roomDesc.Data
 end
 
 
