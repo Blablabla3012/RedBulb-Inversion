@@ -13,6 +13,7 @@ rbMod:AddCallback(ModCallbacks.MC_POST_ENTITY_REMOVE, dataHolder.ClearDataOfEnti
 local roomF = require("scripts.roomF")
 rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, roomF.swapRoomlayoutPools)
 rbMod:AddCallback(ModCallbacks.MC_PRE_NEW_ROOM, roomF.swapItemRoomPools)
+rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, roomF.blockDemonicAngel)
 
 local itemsF = require("scripts.itemsF")
 rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_SELECTION, itemsF.devilFree)

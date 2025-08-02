@@ -1,6 +1,7 @@
 local roomF = {}
 local data = require("scripts.data")
-local level = Game():GetLevel()
+local game = Game()
+local level = game:GetLevel()
 
 
 function roomF:swapRoomlayoutPools(index, dimension)
@@ -72,6 +73,18 @@ function roomF:swapItemRoomPools(room, roomDesc)
     elseif roomDesc.Data.Type == RoomType.ROOM_ANGEL then
         room:SetItemPool(ItemPoolType.POOL_DEVIL)
     end
+end
+
+
+function roomF:blockDemonicAngel(player, entity)
+	if not data.doInversion or entity.Type ~= 5 or entity.Variant ~= 100 then
+	return end
+
+	local roomDescData = level:GetCurrentRoomDesc().Data
+	if roomDescData.Type ~= RoomType.ROOM_ANGEL or roomDescData.Subtype ~= data.roomIds.angelicDevilSubtypeId then
+	return end
+
+	game:AddDevilRoomDeal()
 end
 
 
