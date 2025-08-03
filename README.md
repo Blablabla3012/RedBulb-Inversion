@@ -3,22 +3,30 @@ needs repentogon
 
 Key peaces are optained by bombing the fallen angels (in room?)
 
-# Demonic Angel:
+# Demonic Angel ✅
 Type:		14 Devil Deal \
 Items:		angel pool \
-> take x-items, shop:gives broken hearts ✅ \
-> taking doesn't block angel ✅
+> take x-items, shop:gives broken hearts  \
+> taking doesn't block angel 
 
-# Angelic Devil:
+# Angelic Devil ✅
 Type:		15 Angel Room \
 Items:		devil pool \
-> take one item, free ✅ \
-> taking blocks angel ✅
+> take one item, free  \
+> taking blocks angel 
+
+# Synergies
+The Stairway ✅\
+> evil beggars \
+> sanguine bond spike instead of shop \
+Sanguine Bond \
+> add 1 shop item into the room (similar to "The Stairway")
 
 # ToDo:
-sanguine bond spikes in demonic Stairway? \
-> give sanguine bond effect when entering stairway -> https://repentogon.com/EntityPlayer.html?h=add+innate+colle#void-addinnatecollectible-collectibletype-collectible-int-amount-1 \
 modify sanguine bond \
+make unlockable (1 angel + 1 devil in one run) \
+make findable \
+stairway rooms: get rid of spikes (sanguine spawns them) \
 switch sprites \
 > door chaos \
 greed --maybe done? \
