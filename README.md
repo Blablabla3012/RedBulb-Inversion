@@ -18,8 +18,8 @@ Items:		devil pool
 # Synergies
 The Stairway ✅
 * evil beggars \
-* sanguine bond spike instead of shop \
-Sanguine Bond \
+* sanguine bond spike instead of shop </br>
+Sanguine Bond 
 * add 1 shop item into the room (similar to "The Stairway")
 
 # ToDo:
