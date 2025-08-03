@@ -60,7 +60,7 @@ function roomF:swapRoomlayoutPools(index, dimension)
         end
     else return end
 
-    roomDesc.Data = newRoomData --or roomDesc.Data
+    roomDesc.Data = newRoomData or roomDesc.Data
 end
 
 

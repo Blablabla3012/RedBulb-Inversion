@@ -26,7 +26,7 @@ Sanguine Bond \
 modify sanguine bond \
 make unlockable (1 angel + 1 devil in one run) \
 make findable \
-stairway rooms: get rid of spikes (sanguine spawns them) \
+stairway rooms: get rid of spikes (sanguine spawns one) -> VM \
 switch sprites \
 > door chaos \
 greed --maybe done? \
