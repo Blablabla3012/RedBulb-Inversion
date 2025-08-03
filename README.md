@@ -19,7 +19,7 @@ Items:		devil pool
 The Stairway ✅
 * evil beggars
 * sanguine bond spike instead of shop \
-<a/> \
+<a/>
 Sanguine Bond \
 * add 1 shop item into the room (similar to "The Stairway")
 
