@@ -25,6 +25,7 @@ The Stairway ✅
 <a/>
 Sanguine Bond
 
+
 * add 1 shop item into the room (similar to "The Stairway")
 
 # ToDo:
