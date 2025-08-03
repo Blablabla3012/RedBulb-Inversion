@@ -26,7 +26,7 @@ function stairwayF:giveSanguineOnInit()
 	hasSanguine = false
 
 	local roomDesc = level:GetCurrentRoomDesc()
-	if roomDesc.ListIndex ~= GridRooms.ROOM_ANGEL_SHOP_IDX then
+	if roomDesc.GridIndex ~= GridRooms.ROOM_ANGEL_SHOP_IDX then
 	return end
 
 	local player = Isaac.GetPlayer()
