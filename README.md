@@ -5,22 +5,26 @@ Key peaces are optained by bombing the fallen angels (in room?)
 
 # Demonic Angel ✅
 Type:		14 Devil Deal \
-Items:		angel pool   
+Items:		angel pool
+
 * take x-items, shop:gives broken hearts
 * taking doesn't block angel 
 
 # Angelic Devil ✅
 Type:		15 Angel Room \
-Items:		devil pool   
+Items:		devil pool
+
 * take one item, free
 * taking blocks angel 
 
 # Synergies
-The Stairway ✅   
+The Stairway ✅
+ 
 * evil beggars
 * sanguine bond spike instead of shop
 <a/>
-Sanguine Bond   
+Sanguine Bond
+
 * add 1 shop item into the room (similar to "The Stairway")
 
 # ToDo:
