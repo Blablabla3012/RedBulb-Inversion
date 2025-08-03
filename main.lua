@@ -7,7 +7,8 @@ rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, data.functions.checkForRedBu
 rbMod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, data.functions.GetCustomRoomTypeIds)
 
 local dataHolder = require("scripts.dataHolder")
-rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, dataHolder.GetRightEntityData)
+rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, dataHolder.GetEntityData_demonicAngel)
+rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, dataHolder.GetEntityData_blockAngel)
 rbMod:AddCallback(ModCallbacks.MC_POST_ENTITY_REMOVE, dataHolder.ClearDataOfEntity)
 
 local roomF = require("scripts.roomF")
@@ -20,8 +21,8 @@ rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_SELECTION, itemsF.devilFree)
 rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, itemsF.devilBrokenHearts)
 rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_RENDER, itemsF.renderBrokenHeartsSprite)
 
---local stairwayF = require("scripts.stairwayF")
---rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, stairwayF.giveSanguineBondEffect)
---rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, stairwayF.giveSanguineOnInit) 
+local stairwayF = require("scripts.stairwayF")
+rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, stairwayF.giveSanguineBondEffect)
+rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, stairwayF.giveSanguineOnInit) 
 
 

@@ -1,5 +1,6 @@
 local roomF = {}
 local data = require("scripts.data")
+local dataHolder = require("scripts.dataHolder")
 local game = Game()
 local level = game:GetLevel()
 
@@ -82,6 +83,13 @@ function roomF:blockDemonicAngel(player, entity)
 
 	local roomDescData = level:GetCurrentRoomDesc().Data
 	if roomDescData.Type ~= RoomType.ROOM_ANGEL or roomDescData.Subtype ~= data.roomIds.angelicDevilSubtypeId then
+	return end
+
+	local ptrHash = GetPtrHash(entity)
+	local entityData = dataHolder.Data[ptrHash]
+	if entityData == nil then
+	return end
+	if not entityData.blockAngel then
 	return end
 
 	game:AddDevilRoomDeal()

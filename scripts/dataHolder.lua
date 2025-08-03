@@ -7,7 +7,7 @@ local data = require("scripts.data")
 local level = Game():GetLevel()
 
 
-function dataHolder:GetEntityData(entity)
+local function GetEntityData(entity)
 	local ptrHash = GetPtrHash(entity)
 	if not dataHolder.Data[ptrHash] then
 		dataHolder.Data[ptrHash] = {}
@@ -16,12 +16,13 @@ function dataHolder:GetEntityData(entity)
 		entityData.Pointer = EntityPtr(entity)
 		entityData.touched = false
 		entityData.position = nil
+		entityData.blockAngel = false
 	end
 
 	return dataHolder.Data[ptrHash]
 end
 
-function dataHolder:GetRightEntityData()
+function dataHolder:GetEntityData_demonicAngel()
 	if not data.doInversion then
 	return end
 
@@ -31,10 +32,27 @@ function dataHolder:GetRightEntityData()
 
 	for i, entity in ipairs(Isaac.GetRoomEntities()) do
 		if entity.Type == 5 and entity.Variant == 100 then
-			dataHolder:GetEntityData(entity)
+			GetEntityData(entity)
 		
 			local ptrHash = GetPtrHash(entity)
 			dataHolder.Data[ptrHash].position = entity.Position
+	end end
+end
+
+function dataHolder:GetEntityData_blockAngel()
+	if not data.doInversion then
+	return end
+
+	local roomDescData = level:GetCurrentRoomDesc().Data
+	if roomDescData.Type ~= RoomType.ROOM_ANGEL or roomDescData.Subtype ~= data.roomIds.angelicDevilSubtypeId then
+	return end
+
+	for i, entity in ipairs(Isaac.GetRoomEntities()) do
+		if entity.Type == 5 and entity.Variant == 100 then
+			GetEntityData(entity)
+		
+			local ptrHash = GetPtrHash(entity)
+			dataHolder.Data[ptrHash].blockAngel = true
 	end end
 end
 
