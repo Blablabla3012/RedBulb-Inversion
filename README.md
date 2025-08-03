@@ -34,12 +34,14 @@ make findable \
 unwanted behavior with dataHolder: 
 * spawn item in demonic Angel, leave, reenter: on pickup: player gets broken heart
 * spawn item in angelic Devil, leav, reenter: on pickup: blocks Angel
-<a/> \
-stairway rooms: get rid of spikes (sanguine spawns one) -> VM \
+<a/>
+stairway rooms: get rid of spikes (sanguine spawns one) -> VM
+
 switch sprites 
 * door chaos
-<a/> \
-greed --maybe done? \
+<a/>
+greed --maybe done?
+
 room for sheal/cathedral even without unlocked --maybe done?
 
 # Basement Renovator:
