@@ -21,7 +21,7 @@ Items:		devil pool
 The Stairway
  
 * evil beggars
-* sanguine bond spike instead of shop
+* pound of flesh for items
 <a/>
 Sanguine Bond
 
