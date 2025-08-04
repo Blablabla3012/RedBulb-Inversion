@@ -30,7 +30,11 @@ Sanguine Bond
     * add 1 shop item into the room (similar to "The Stairway")
 
 # ToDo:
-stairway \
+stairway
+* every shop item is an collectible -> because spawns in an devil deal: the shop pool in devil = collectibles; needs to be angel type?
+    * need Basement Renovator to work further
+<a/>
+
 sanguine \
 make unlockable (1 angel + 1 devil in one run) \
 make findable \
