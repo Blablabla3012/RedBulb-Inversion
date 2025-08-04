@@ -30,11 +30,6 @@ Sanguine Bond
     * add 1 shop item into the room (similar to "The Stairway")
 
 # ToDo:
-stairway
-* every shop item is an collectible -> because spawns in an devil deal: the shop pool in devil = collectibles; needs to be angel type?
-    * need Basement Renovator to work further
-<a/>
-
 sanguine \
 make unlockable (1 angel + 1 devil in one run) \
 make findable \
@@ -42,13 +37,17 @@ unwanted behavior with dataHolder:
 * spawn item in demonic Angel, leave, reenter: on pickup: player gets broken heart
 * spawn item in angelic Devil, leav, reenter: on pickup: blocks Angel
 <a/>
-stairway rooms: get rid of spikes (sanguine spawns one) -> VM
 
 switch sprites 
 * door chaos
 <a/>
-greed --maybe done?
 
+stairway
+* every shop item is an collectible -> because spawns in an devil deal: the shop pool in devil = collectibles; needs to be angel type?
+    * need Basement Renovator to work further
+<a/>
+
+greed --maybe done?
 room for sheal/cathedral even without unlocked --maybe done?
 
 # Basement Renovator:
