@@ -23,8 +23,7 @@ rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_RENDER, itemsF.renderBrokenHeartsS
 
 local stairwayF = require("scripts.stairwayF")
 rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, stairwayF.giveSanguine)
-rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, stairwayF.giveSanguineOnInit) -- AddInnateCollectible does not work if reentering run
+rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, stairwayF.giveSanguineOnInit) -- AddInnateCollectible does not work after reentering run
 
 local sanguineF = require("scripts.sanguineF")
 rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, sanguineF.blockSanguineBond)
-rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, sanguineF.setSanguineBlockedVariable)

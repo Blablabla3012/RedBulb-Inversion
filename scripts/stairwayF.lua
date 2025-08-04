@@ -3,35 +3,35 @@ local data = require("scripts.data")
 local level = Game():GetLevel()
 
 
-local AddedSanguine = true
-function stairwayF:giveSanguine(index, dimension)
+local AddedPound = true
+function stairwayF:givePound(index, dimension)
 	if not data.doInversion then
 	return end
 
 	if index == GridRooms.ROOM_ANGEL_SHOP_IDX then
 		local player = Isaac.GetPlayer() --not PlayerManager.GetPlayers(), one instant of Sanguine Bond is enough
-		player:AddInnateCollectible(CollectibleType.COLLECTIBLE_SANGUINE_BOND, 1) -- 1 = Amount
-		AddedSanguine = true
-	elseif AddedSanguine then
+		player:AddInnateCollectible(CollectibleType.COLLECTIBLE_POUND_OF_FLESH, 1) -- 1 = Amount
+		AddedPound = true
+	elseif AddedPound then
 		local player = Isaac.GetPlayer()
-		player:AddInnateCollectible(CollectibleType.COLLECTIBLE_SANGUINE_BOND, -1)
-		AddedSanguine = false
+		player:AddInnateCollectible(CollectibleType.COLLECTIBLE_POUND_OF_FLESH, -1)
+		AddedPound = false
 	end
 end
 
-function stairwayF:giveSanguineOnInit()
+function stairwayF:givePoundOnInit()
 	if not data.doInversion then
 	return end
 
-	AddedSanguine = false
+	AddedPound = false
 
 	local roomDesc = level:GetCurrentRoomDesc()
 	if roomDesc.GridIndex ~= GridRooms.ROOM_ANGEL_SHOP_IDX then
 	return end
 
 	local player = Isaac.GetPlayer()
-	player:AddInnateCollectible(CollectibleType.COLLECTIBLE_SANGUINE_BOND, 1)
-	AddedSanguine = true
+	player:AddInnateCollectible(CollectibleType.COLLECTIBLE_POUND_OF_FLESH, 1)
+	AddedPound = true
 end
 
 

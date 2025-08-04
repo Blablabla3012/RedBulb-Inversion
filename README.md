@@ -18,18 +18,20 @@ Items:		devil pool
 * taking blocks angel 
 
 # Synergies
-The Stairway ✅
+The Stairway
  
 * evil beggars
 * sanguine bond spike instead of shop
 <a/>
 Sanguine Bond
 
-* no sanguine bond spikes
-* add 1 shop item into the room (similar to "The Stairway")
+* he/she told me nothing, my idea:
+    * no sanguine bond spikes in demonic Angel ✅
+    * add 1 shop item into the room (similar to "The Stairway")
 
 # ToDo:
-modify sanguine bond \
+stairway \
+sanguine \
 make unlockable (1 angel + 1 devil in one run) \
 make findable \
 unwanted behavior with dataHolder: 
