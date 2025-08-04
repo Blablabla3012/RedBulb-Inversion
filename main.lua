@@ -25,4 +25,5 @@ local stairwayF = require("scripts.stairwayF")
 rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, stairwayF.giveSanguineBondEffect)
 rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, stairwayF.giveSanguineOnInit) 
 
-
+local sanguineF = require("scripts.sanguineF")
+rbMod:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE, sanguineF.blockSanguineBond)
