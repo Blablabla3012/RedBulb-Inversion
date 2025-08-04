@@ -25,11 +25,14 @@ The Stairway ✅
 <a/>
 Sanguine Bond
 
-
 * add 1 shop item into the room (similar to "The Stairway")
 
 # ToDo:
 modify sanguine bond \
+* prevent from spawning in demonic Angel
+* spawn shop item instead
+<a/>
+
 make unlockable (1 angel + 1 devil in one run) \
 make findable \
 unwanted behavior with dataHolder: 
