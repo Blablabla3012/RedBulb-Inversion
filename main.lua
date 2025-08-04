@@ -22,8 +22,9 @@ rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, itemsF.devilBrokenHearts
 rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_RENDER, itemsF.renderBrokenHeartsSprite)
 
 local stairwayF = require("scripts.stairwayF")
-rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, stairwayF.giveSanguineBondEffect)
-rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, stairwayF.giveSanguineOnInit) 
+rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, stairwayF.giveSanguine)
+rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, stairwayF.giveSanguineOnInit) -- AddInnateCollectible does not work if reentering run
 
 local sanguineF = require("scripts.sanguineF")
-rbMod:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE, sanguineF.blockSanguineBond)
+rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, sanguineF.blockSanguineBond)
+rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, sanguineF.setSanguineBlockedVariable)

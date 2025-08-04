@@ -2,28 +2,28 @@ local stairwayF = {}
 local data = require("scripts.data")
 local level = Game():GetLevel()
 
-local hasSanguine = false
-function stairwayF:giveSanguineBondEffect(index, dimension)
+
+local AddedSanguine = true
+function stairwayF:giveSanguine(index, dimension)
 	if not data.doInversion then
 	return end
 
-	local player = Isaac.GetPlayer()
-	hasSanguine = false
-
 	if index == GridRooms.ROOM_ANGEL_SHOP_IDX then
+		local player = Isaac.GetPlayer() --not PlayerManager.GetPlayers(), one instant of Sanguine Bond is enough
 		player:AddInnateCollectible(CollectibleType.COLLECTIBLE_SANGUINE_BOND, 1) -- 1 = Amount
-		hasSanguine = true
-	elseif hasSanguine then
+		AddedSanguine = true
+	elseif AddedSanguine then
+		local player = Isaac.GetPlayer()
 		player:AddInnateCollectible(CollectibleType.COLLECTIBLE_SANGUINE_BOND, -1)
-		hasSanguine = false
-	return end
+		AddedSanguine = false
+	end
 end
 
 function stairwayF:giveSanguineOnInit()
 	if not data.doInversion then
 	return end
 
-	hasSanguine = false
+	AddedSanguine = false
 
 	local roomDesc = level:GetCurrentRoomDesc()
 	if roomDesc.GridIndex ~= GridRooms.ROOM_ANGEL_SHOP_IDX then
@@ -31,7 +31,7 @@ function stairwayF:giveSanguineOnInit()
 
 	local player = Isaac.GetPlayer()
 	player:AddInnateCollectible(CollectibleType.COLLECTIBLE_SANGUINE_BOND, 1)
-	hasSanguine = true
+	AddedSanguine = true
 end
 
 
