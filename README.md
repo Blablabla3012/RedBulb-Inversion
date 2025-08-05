@@ -25,7 +25,7 @@ The Stairway
 <a/>
 Sanguine Bond
 
-* he/she told me nothing, my idea:
+* they told me nothing, my idea:
     * no sanguine bond spikes in demonic Angel ✅
     * add 1 shop item into the room (similar to "The Stairway")
 
@@ -43,12 +43,13 @@ switch sprites
 <a/>
 
 stairway
-* every shop item is an collectible -> because spawns in an devil deal: the shop pool in devil = collectibles; needs to be angel type?
+* every shop item is an collectible -> because spawns in an devil deal: the shop pool in devil = collectibles
+    * needs to be Angel? + give pound of flesh
     * need Basement Renovator to work further
 <a/>
 
 greed --maybe done?
-room for sheal/cathedral even without unlocked --maybe done?
+room for sheal/cathedral without unlocked (early Game) --maybe done?
 
 # Basement Renovator:
 Nulls -> Blue Gaper \
