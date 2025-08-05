@@ -1,10 +1,10 @@
-local stairwayF = {}
+local stairway = {}
 local data = require("scripts.data")
 local level = Game():GetLevel()
 
 
 local AddedPound = true
-function stairwayF:givePound(index, dimension)
+function stairway:givePound(index, dimension)
 	if not data.doInversion then
 	return end
 
@@ -19,7 +19,7 @@ function stairwayF:givePound(index, dimension)
 	end
 end
 
-function stairwayF:givePoundOnInit()
+function stairway:givePoundOnInit()
 	if not data.doInversion then
 	return end
 
@@ -35,4 +35,4 @@ function stairwayF:givePoundOnInit()
 end
 
 
-return stairwayF
+return stairway

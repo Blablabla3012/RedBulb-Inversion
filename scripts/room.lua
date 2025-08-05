@@ -1,11 +1,11 @@
-local roomF = {}
+local room = {}
 local data = require("scripts.data")
 local dataHolder = require("scripts.dataHolder")
 local game = Game()
 local level = game:GetLevel()
 
 
-function roomF:swapRoomlayoutPools(index, dimension)
+function room:swapRoomlayoutPools(index, dimension)
     if (index ~= GridRooms.ROOM_DEVIL_IDX and index ~= GridRooms.ROOM_ANGEL_SHOP_IDX) or not data.doInversion then
     return end
 
@@ -65,7 +65,7 @@ function roomF:swapRoomlayoutPools(index, dimension)
 end
 
 
-function roomF:swapItemRoomPools(room, roomDesc)
+function room:swapItemRoomPools(room, roomDesc)
     if not data.doInversion then
     return end
 
@@ -77,7 +77,7 @@ function roomF:swapItemRoomPools(room, roomDesc)
 end
 
 
-function roomF:blockDemonicAngel(player, entity)
+function room:blockDemonicAngel(player, entity)
 	if not data.doInversion or entity.Type ~= 5 or entity.Variant ~= 100 then
 	return end
 
@@ -96,4 +96,4 @@ function roomF:blockDemonicAngel(player, entity)
 end
 
 
-return roomF
+return room

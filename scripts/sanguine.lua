@@ -1,10 +1,10 @@
-local sanguineF = {}
+local sanguine = {}
 local data = require("scripts.data")
 local level = Game():GetLevel()
 
 
 local sanguineBlocked = true
-function sanguineF:blockSanguineBond(index)
+function sanguine:blockSanguineBond(index)
 	if not data.doInversion then
 	return end
 	
@@ -24,4 +24,4 @@ function sanguineF:blockSanguineBond(index)
 end
 
 
-return sanguineF
+return sanguine

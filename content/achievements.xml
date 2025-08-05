@@ -1,0 +1,4 @@
+<achievements gfxroot="gfx/ui/achievement/">
+	<!-- 1 devil deal and 1 angel deal in one run -->
+	<achievement id="1" text='' gfx="Achievement_RedBulb" name="Red Bulb Unlock" />
+</achievements>

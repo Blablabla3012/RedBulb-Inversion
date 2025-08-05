@@ -11,19 +11,25 @@ rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, dataHolder.GetEntityData_demoni
 rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, dataHolder.GetEntityData_blockAngel)
 rbMod:AddCallback(ModCallbacks.MC_POST_ENTITY_REMOVE, dataHolder.ClearDataOfEntity)
 
-local roomF = require("scripts.roomF")
-rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, roomF.swapRoomlayoutPools)
-rbMod:AddCallback(ModCallbacks.MC_PRE_NEW_ROOM, roomF.swapItemRoomPools)
-rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, roomF.blockDemonicAngel)
+local room = require("scripts.room")
+rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, room.swapRoomlayoutPools)
+rbMod:AddCallback(ModCallbacks.MC_PRE_NEW_ROOM, room.swapItemRoomPools)
+rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, room.blockDemonicAngel)
 
-local itemsF = require("scripts.itemsF")
-rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_SELECTION, itemsF.devilFree)
-rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, itemsF.devilBrokenHearts)
-rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_RENDER, itemsF.renderBrokenHeartsSprite)
+local items = require("scripts.items")
+rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_SELECTION, items.devilFree)
+rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, items.devilBrokenHearts)
+rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_RENDER, items.renderBrokenHeartsSprite)
 
---local stairwayF = require("scripts.stairwayF")
---rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, stairwayF.givePound)
---rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, stairwayF.givePoundOnInit) -- AddInnateCollectible does not work after reentering run
+--local stairway = require("scripts.stairway")
+--rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, stairway.givePound)
+--rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, stairway.givePoundOnInit) -- AddInnateCollectible does not work after reentering run
 
-local sanguineF = require("scripts.sanguineF")
-rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, sanguineF.blockSanguineBond)
+local sanguine = require("scripts.sanguine")
+rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, sanguine.blockSanguineBond)
+
+local unlock = require("scripts.unlock")
+if not Isaac.GetPersistentGameData():Unlocked(unlock.achievement) then
+	rbMod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, unlock.resetOnNewRun)
+	rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, unlock.checkRooms_unlock)
+end

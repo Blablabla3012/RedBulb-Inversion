@@ -1,10 +1,10 @@
-local itemsF = {}
+local items = {}
 local data = require("scripts.data")
 local dataHolder = require("scripts.dataHolder")
 local level = Game():GetLevel()
 
 
-function itemsF:devilFree(pickup, variant)
+function items:devilFree(pickup, variant)
 	if not data.doInversion then
 	return end
 
@@ -19,7 +19,7 @@ function itemsF:devilFree(pickup, variant)
 end
 
 
-function itemsF:devilBrokenHearts(player, entity)
+function items:devilBrokenHearts(player, entity)
 	if not data.doInversion or entity.Type ~= 5 or entity.Variant ~= 100 then
 	return end
 
@@ -39,7 +39,7 @@ end
 local brokenHeartSprite = Sprite()
 brokenHeartSprite:Load("gfx/ui/ui_hearts.anm2", true)
 brokenHeartSprite:Play("BrokenHeart", true)
-function itemsF:renderBrokenHeartsSprite()
+function items:renderBrokenHeartsSprite()
 	if not data.doInversion then
 	return end
 
@@ -68,4 +68,4 @@ function itemsF:renderBrokenHeartsSprite()
 end
 
 
-return itemsF
+return items
