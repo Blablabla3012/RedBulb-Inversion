@@ -1,5 +1,6 @@
 # RedBulb-Inversion
-needs repentogon
+needs repentogon \
+unlocks by 1 Devil + 1 Angel in one run ✅ \
 
 Key peaces are optained by bombing the fallen angels (in room?)
 
@@ -31,7 +32,6 @@ Sanguine Bond
 
 # ToDo:
 sanguine \
-make unlockable (1 angel + 1 devil in one run) \
 make findable \
 unwanted behavior with dataHolder: 
 * spawn item in demonic Angel, leave, reenter: on pickup: player gets broken heart
@@ -48,8 +48,13 @@ stairway
     * need Basement Renovator to work further
 <a/>
 
-greed --maybe done?
-room for sheal/cathedral without unlocked (early Game) --maybe done?
+greed --maybe done? \
+room for sheal/cathedral without unlocked (early Game) --maybe done? \
+get sprites:
+* item
+* unlock sheet
+* rooms and doors
+<a/>
 
 # Basement Renovator:
 Nulls -> Blue Gaper \
