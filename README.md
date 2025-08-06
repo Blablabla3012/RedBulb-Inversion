@@ -33,7 +33,7 @@ Sanguine Bond ✅
 # ToDo:
 unwanted behavior with dataHolder: 
 * spawn item in demonic Angel, leave, reenter: on pickup: player gets broken heart
-* spawn item in angelic Devil, leav, reenter: on pickup: blocks Angel
+* spawn item in angelic Devil, leave, reenter: on pickup: blocks Angel
 <a/>
 
 switch sprites 
