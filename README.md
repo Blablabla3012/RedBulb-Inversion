@@ -20,17 +20,17 @@ Items:		devil pool
 
 # Synergies
 The Stairway 
-* evil beggars
+* evil beggars ✅
 * pound of flesh for items
 <a/>
 
-Sanguine Bond
-* no sanguine bond spikes in demonic Angel ✅
+Sanguine Bond ✅
+* no sanguine bond spikes in demonic Angel
 * spawn confessional in angelic devil
+    * spawns in center of room -> maybe change position, but: layout is "dangerous"
 <a/>
 
 # ToDo:
-sanguine \
 unwanted behavior with dataHolder: 
 * spawn item in demonic Angel, leave, reenter: on pickup: player gets broken heart
 * spawn item in angelic Devil, leav, reenter: on pickup: blocks Angel
@@ -51,7 +51,7 @@ greed
 * code should work?
 <a/>
 
-room for sheal/cathedral without unlocked (early Game) --maybe done? \
+room for sheol/cathedral without unlocked (early Game) --maybe done? \
 get sprites:
 * item
 * unlock sheet

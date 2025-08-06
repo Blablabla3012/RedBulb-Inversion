@@ -1,6 +1,7 @@
 local sanguine = {}
 local data = require("scripts.data")
-local level = Game():GetLevel()
+local game = Game()
+local level = game:GetLevel()
 
 
 local sanguineBlocked = true
@@ -21,6 +22,34 @@ function sanguine:blockSanguineBond(index)
 		end
 		sanguineBlocked = false
 	end
+end
+
+
+local hasSanguine = false
+function sanguine:checkForSanguine()
+	if not data.doInversion then
+	return end
+
+	local num_SanguineBond = PlayerManager.GetNumCollectibles(CollectibleType.COLLECTIBLE_SANGUINE_BOND)
+	if num_SanguineBond == 0 then
+		hasSanguine = false
+	else
+		hasSanguine = true
+	end
+end
+
+function sanguine:spawnConfessional()
+	if not data.doInversion then
+	return end
+	if not hasSanguine then
+	return end
+
+	local roomDesc = level:GetCurrentRoomDesc()
+	if roomDesc.GridIndex ~= GridRooms.ROOM_DEVIL_IDX or roomDesc.Data.Type ~= RoomType.ROOM_ANGEL or roomDesc.Data.Subtype ~= data.roomIds.angelicDevilSubtypeId then
+	return end
+
+	local pos = game:GetRoom():GetCenterPos()
+	game:Spawn(EntityType.ENTITY_SLOT, 17 --[[Variant: confessional]], pos, Vector(0, 0) --[[velocity]], nil --[[parent]], 0 --[[Subtype]], game:GetRoom():GetSpawnSeed())
 end
 
 

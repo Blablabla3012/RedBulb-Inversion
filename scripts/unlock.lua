@@ -6,7 +6,6 @@ local isUnlocked = false
 
 function unlock:isUnlocked()
 	isUnlocked = Isaac.GetPersistentGameData():Unlocked(unlock.achievement_RedBulb)
-	print(isUnlocked)
 end
 
 
@@ -22,7 +21,6 @@ function unlock:resetOnNewRun(isContinued)
 end
 
 function unlock:checkRooms_unlock(index, dimension)
-	print("test")
 	if isUnlocked then
 	return end
 
@@ -35,19 +33,16 @@ function unlock:checkRooms_unlock(index, dimension)
 	if not wasInDevil then
 		if roomDesc.Data.Type == RoomType.ROOM_DEVIL then
 			wasInDevil = true
-			print("wasInDevil == true")
 	end end
 
 	if not wasInAngel then
 		if roomDesc.Data.Type == RoomType.ROOM_ANGEL then
 			wasInAngel = true
-			print("wasInAngel == true")
 	end end
 
 
 	if wasInDevil and wasInAngel then
 		Isaac.GetPersistentGameData():TryUnlock(unlock.achievement_RedBulb)
-		print("UNLOCKED!!!")
 	end
 end
 
