@@ -4,7 +4,7 @@ needs repentogon
 unlocks by 1 Devil + 1 Angel in one run ✅ \
 can be found in: secret, devil, angel, ultra secret ✅ \
 Redbulb-Count/2 ~= n.5 -> do not invert ✅ \
-Key peaces are optained by bombing the fallen angels (in room?)
+Key peaces are optained by bombing the fallen angels (demonic Angel) 
 
 # Demonic Angel ✅
 Type:		14 Devil Deal \
