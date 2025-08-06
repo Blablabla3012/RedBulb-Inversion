@@ -1,7 +1,7 @@
 # RedBulb-Inversion
-needs repentogon \
-unlocks by 1 Devil + 1 Angel in one run ✅ \
+needs repentogon 
 
+unlocks by 1 Devil + 1 Angel in one run ✅ \
 Key peaces are optained by bombing the fallen angels (in room?)
 
 # Demonic Angel ✅
