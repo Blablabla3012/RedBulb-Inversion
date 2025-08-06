@@ -2,37 +2,35 @@
 needs repentogon 
 
 unlocks by 1 Devil + 1 Angel in one run ✅ \
+can be found in: secret, devil, angel, ultra secret ✅ \
+Redbulb-Count/2 ~= n.5 -> do not invert \
 Key peaces are optained by bombing the fallen angels (in room?)
 
 # Demonic Angel ✅
 Type:		14 Devil Deal \
 Items:		angel pool
-
 * take x-items, shop:gives broken hearts
 * taking doesn't block angel 
 
 # Angelic Devil ✅
 Type:		15 Angel Room \
 Items:		devil pool
-
 * take one item, free
 * taking blocks angel 
 
 # Synergies
-The Stairway
- 
+The Stairway 
 * evil beggars
 * pound of flesh for items
 <a/>
-Sanguine Bond
 
-* they told me nothing, my idea:
-    * no sanguine bond spikes in demonic Angel ✅
-    * add 1 shop item into the room (similar to "The Stairway")
+Sanguine Bond
+* no sanguine bond spikes in demonic Angel ✅
+* spawn confessional in angelic devil
+<a/>
 
 # ToDo:
 sanguine \
-make findable \
 unwanted behavior with dataHolder: 
 * spawn item in demonic Angel, leave, reenter: on pickup: player gets broken heart
 * spawn item in angelic Devil, leav, reenter: on pickup: blocks Angel
@@ -48,7 +46,11 @@ stairway
     * need Basement Renovator to work further
 <a/>
 
-greed --maybe done? \
+greed
+* itempools.xml ✅
+* code should work?
+<a/>
+
 room for sheal/cathedral without unlocked (early Game) --maybe done? \
 get sprites:
 * item
