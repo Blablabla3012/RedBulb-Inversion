@@ -9,7 +9,7 @@ function items:devilFree(pickup, variant)
 	return end
 
 	local roomDescData = level:GetCurrentRoomDesc().Data
-	if roomDescData.Type ~= RoomType.ROOM_DEVIL or roomDescData.Subtype ~= data.roomIds.demonicAngelSubtypeId then
+	if roomDescData.Type ~= data.rooms.demonicAngelType or roomDescData.Subtype ~= data.rooms.demonicAngelSubtype then
 	return end
 
 	if variant ~= 100 or not (pickup.Price < 0 and pickup.Price > -10) then
@@ -46,7 +46,7 @@ function items:renderBrokenHeartsSprite()
 	return end
 
 	local roomDescData = level:GetCurrentRoomDesc().Data
-	if roomDescData.Type ~= RoomType.ROOM_DEVIL or roomDescData.Subtype ~= data.roomIds.demonicAngelSubtypeId then
+	if roomDescData.Type ~= data.rooms.demonicAngelType or roomDescData.Subtype ~= data.rooms.demonicAngelSubtype then
 	return end
 
 	for i, entity in ipairs(Isaac.GetRoomEntities()) do
