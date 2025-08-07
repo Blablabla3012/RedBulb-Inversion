@@ -1,6 +1,6 @@
 local data = {}
 data.functions = {}
-data.redBulb = Isaac.GetItemByName("Red Bulb")
+data.redBulb = Isaac.GetItemIdByName("Red Bulb")
 
 
 data.doInversion = nil
@@ -37,7 +37,7 @@ data.rooms.demonicAngelStairwayVarMax = nil
 data.rooms.demonicAngelStairwaySubtype = nil
 data.rooms.demonicAngelPortal = nil
 
-function data.functions:GetCustomRoomTypes()
+function data.functions:GetCustomRoomData()
 	local isGreedMode = 0
 	if Game():IsGreedMode() then
 		isGreedMode = 1

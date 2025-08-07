@@ -20,9 +20,9 @@ Items:		devil pool
 * taking blocks angel 
 
 # Synergies
-The Stairway 
-* evil beggars ✅
-* pound of flesh for items
+The Stairway ✅
+* evil beggars 
+* pound of flesh for items 
 <a/>
 
 Sanguine Bond ✅
@@ -40,12 +40,6 @@ switch sprites
 * door chaos
 <a/>
 
-stairway
-* every shop item is an collectible -> because spawns in an devil deal: the shop pool in devil = collectibles
-    * needs to be Angel? + give pound of flesh
-    * need Basement Renovator to work further
-<a/>
-
 greed
 * itempools.xml ✅
 * code should work?
@@ -53,6 +47,7 @@ greed
 <a/>
 
 room for sheol/cathedral without unlocked (early Game) --maybe done? \
+balencing for demonic angel? in good run 3-4 deals with each 2 quality 3 only 6-8 broken hearts -> really powerfull \
 get sprites:
 * item
 * unlock sheet

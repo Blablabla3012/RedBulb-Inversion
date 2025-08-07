@@ -9,7 +9,7 @@ function room:swapRoomlayoutPools(index, dimension)
     if (index ~= GridRooms.ROOM_DEVIL_IDX and index ~= GridRooms.ROOM_ANGEL_SHOP_IDX) or not data.doInversion then
     return end
 
-    local roomDesc = level:GetRoomByx(index, dimension)
+    local roomDesc = level:GetRoomByIdx(index, dimension)
     local newRoomData = nil
     local rooms = data.rooms
 

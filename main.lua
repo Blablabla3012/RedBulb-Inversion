@@ -4,7 +4,7 @@ local rbMod = RegisterMod("Red Bulb - Inversion", 1)
 local data = require("scripts.data")
 rbMod:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE, data.functions.checkForRedBulb)
 rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, data.functions.checkForRedBulb)
-rbMod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, data.functions.GetCustomRoomTypeIds)
+rbMod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, data.functions.GetCustomRoomData)
 
 local dataHolder = require("scripts.dataHolder")
 rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, dataHolder.GetEntityData_demonicAngel)
