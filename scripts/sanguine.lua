@@ -49,8 +49,7 @@ function sanguine:spawnConfessional()
 	return end
 
 	local room = game:GetRoom()
-	local gridIndex = room:GetGridIndexByTile(2,3)
-	local pos = room:GetGridPosition(gridIndex)
+	local pos = room:GetGridPosition(47)
 	game:Spawn(EntityType.ENTITY_SLOT, 17 --[[Variant: confessional]], pos, Vector(0, 0) --[[velocity]], nil --[[parent]], 0 --[[Subtype]], room:GetSpawnSeed())
 end
 
