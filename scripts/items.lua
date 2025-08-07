@@ -27,6 +27,8 @@ function items:devilBrokenHearts(player, entity)
 	local entityData = dataHolder.Data[ptrHash]
 	if entityData == nil then
 	return end
+	if entityData.blockAngel then
+	return end
 	
 	if entityData.touched then
 	return end

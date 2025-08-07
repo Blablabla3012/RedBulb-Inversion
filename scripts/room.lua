@@ -81,10 +81,6 @@ function room:blockDemonicAngel(player, entity)
 	if not data.doInversion or entity.Type ~= 5 or entity.Variant ~= 100 then
 	return end
 
-	local roomDescData = level:GetCurrentRoomDesc().Data
-	if roomDescData.Type ~= RoomType.ROOM_ANGEL or roomDescData.Subtype ~= data.roomIds.angelicDevilSubtypeId then
-	return end
-
 	local ptrHash = GetPtrHash(entity)
 	local entityData = dataHolder.Data[ptrHash]
 	if entityData == nil then

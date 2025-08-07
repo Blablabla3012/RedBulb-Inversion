@@ -4,7 +4,7 @@ needs repentogon
 unlocks by 1 Devil + 1 Angel in one run ✅ \
 can be found in: secret, devil, angel, ultra secret ✅ \
 Redbulb-Count/2 ~= n.5 -> do not invert ✅ \
-Key peaces are optained by bombing the fallen angels (demonic Angel) 
+Key peaces are optained by bombing the fallen angels (demonic Angel) ✅
 
 # Demonic Angel ✅
 Type:		14 Devil Deal \
@@ -27,7 +27,6 @@ The Stairway
 Sanguine Bond ✅
 * no sanguine bond spikes in demonic Angel
 * spawn confessional in angelic devil
-    * spawns in center of room -> maybe change position, but: layout is "dangerous"
 <a/>
 
 # ToDo:
@@ -49,6 +48,7 @@ stairway
 greed
 * itempools.xml ✅
 * code should work?
+* rooms correctly?
 <a/>
 
 room for sheol/cathedral without unlocked (early Game) --maybe done? \

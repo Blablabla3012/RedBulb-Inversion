@@ -48,8 +48,10 @@ function sanguine:spawnConfessional()
 	if roomDesc.GridIndex ~= GridRooms.ROOM_DEVIL_IDX or roomDesc.Data.Type ~= RoomType.ROOM_ANGEL or roomDesc.Data.Subtype ~= data.roomIds.angelicDevilSubtypeId then
 	return end
 
-	local pos = game:GetRoom():GetCenterPos()
-	game:Spawn(EntityType.ENTITY_SLOT, 17 --[[Variant: confessional]], pos, Vector(0, 0) --[[velocity]], nil --[[parent]], 0 --[[Subtype]], game:GetRoom():GetSpawnSeed())
+	local room = game:GetRoom()
+	local gridIndex = room:GetGridIndexByTile(2,3)
+	local pos = room:GetGridPosition(gridIndex)
+	game:Spawn(EntityType.ENTITY_SLOT, 17 --[[Variant: confessional]], pos, Vector(0, 0) --[[velocity]], nil --[[parent]], 0 --[[Subtype]], room:GetSpawnSeed())
 end
 
 
