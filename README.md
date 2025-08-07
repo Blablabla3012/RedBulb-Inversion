@@ -13,6 +13,7 @@ Items:		angel pool
 * taking doesn't block angel 
 
 # Angelic Devil ✅
+enhanced version with "Number Magnet"
 Type:		15 Angel Room \
 Items:		devil pool
 * take one item, free
