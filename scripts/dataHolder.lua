@@ -16,6 +16,7 @@ local function GetEntityData(entity)
 		entityData.Pointer = EntityPtr(entity)
 		entityData.touched = false
 		entityData.position = nil
+		entityData.brokenHearts = nil
 		entityData.blockAngel = false
 	end
 
@@ -36,6 +37,14 @@ function dataHolder:GetEntityData_demonicAngel()
 		
 			local ptrHash = GetPtrHash(entity)
 			dataHolder.Data[ptrHash].position = entity.Position
+
+			local itemConfig = Isaac.GetItemConfig()
+			local itemConfig_Item = itemConfig:GetCollectible(entity.SubType)
+			if itemConfig_Item.Quality >= 3 then
+				dataHolder.Data[ptrHash].brokenHearts = 2
+			else
+				dataHolder.Data[ptrHash].brokenHearts = 1
+			end
 	end end
 end
 

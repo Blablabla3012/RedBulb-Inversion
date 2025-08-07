@@ -18,8 +18,8 @@ rbMod:AddCallback(ModCallbacks.MC_PRE_NEW_ROOM, room.swapItemRoomPools)
 rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, room.blockDemonicAngel)
 
 local items = require("scripts.items")
-rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_SELECTION, items.devilFree)
-rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, items.devilBrokenHearts)
+rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_SELECTION, items.demonicAngelNoRedHearts)
+rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, items.demonicAngelBrokenHearts)
 rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_RENDER, items.renderBrokenHeartsSprite)
 
 local unlock = require("scripts.unlock")

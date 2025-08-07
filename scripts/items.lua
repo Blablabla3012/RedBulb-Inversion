@@ -4,7 +4,7 @@ local dataHolder = require("scripts.dataHolder")
 local level = Game():GetLevel()
 
 
-function items:devilFree(pickup, variant)
+function items:demonicAngelNoRedHearts(pickup, variant)
 	if not data.doInversion then
 	return end
 
@@ -19,7 +19,7 @@ function items:devilFree(pickup, variant)
 end
 
 
-function items:devilBrokenHearts(player, entity)
+function items:demonicAngelBrokenHearts(player, entity)
 	if not data.doInversion or entity.Type ~= 5 or entity.Variant ~= 100 then
 	return end
 
@@ -34,7 +34,7 @@ function items:devilBrokenHearts(player, entity)
 	return end
 	
 	dataHolder.Data[ptrHash].touched = true
-	player:AddBrokenHearts(1)
+	player:AddBrokenHearts(entityData.brokenHearts)
 end
 
 
@@ -56,16 +56,26 @@ function items:renderBrokenHeartsSprite()
 		if entityData ~= nil then
 			if entityData.touched == false then
 
-				local screenPosition = Isaac.WorldToScreen(entityData.position)
+				local screenPos = Isaac.WorldToScreen(entityData.position)
 				local offset = {}
 				offset.Y = -10
 				offset.X = 3
-				screenPosition.Y = screenPosition.Y + offset.Y
-				screenPosition.X = screenPosition.X + offset.X
+				screenPos.Y = screenPos.Y + offset.Y
+				screenPos.X = screenPos.X + offset.X
 
 				brokenHeartSprite:Update()
-				brokenHeartSprite:Render(screenPosition)
+				brokenHeartSprite:Render(screenPos)
 
+				if entityData.brokenHearts == 2 then
+					local secPos = screenPos
+					local secOffset = {}
+					secOffset.Y = 5
+					secOffset.X = 3
+					secPos.Y = secPos.Y + secOffset.Y
+					secPos.X = secPos.X + secOffset.X
+
+					brokenHeartSprite:Render(secPos)
+				end
 	end end end
 end
 

@@ -9,7 +9,7 @@ Key peaces are optained by bombing the fallen angels (demonic Angel) ✅
 # Demonic Angel ✅
 Type:		14 Devil Deal \
 Items:		angel pool
-* take x-items, shop:gives broken hearts
+* take x-items, shop: gives broken hearts: >= Q3 -> 2 else 1
 * taking doesn't block angel 
 
 # Angelic Devil ✅
