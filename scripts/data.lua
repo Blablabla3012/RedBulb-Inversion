@@ -26,7 +26,8 @@ data.rooms.angelicDevilNumberMagnetVarMin = nil
 data.rooms.angelicDevilNumberMagnetVarMax = nil
 data.rooms.angelicDevilNumberMagnetSubtype = nil
 data.rooms.angelicDevilPortalType = nil
-data.rooms.angelicDevilPortal = nil
+data.rooms.angelicDevilPortalVar = nil
+data.rooms.angelicDevilPortalSubtype = nil
 data.rooms.demonicAngelType = nil
 data.rooms.demonicAngelVarMin = nil
 data.rooms.demonicAngelVarMax = nil
@@ -35,7 +36,9 @@ data.rooms.demonicAngelStairwayType = nil
 data.rooms.demonicAngelStairwayVarMin = nil
 data.rooms.demonicAngelStairwayVarMax = nil
 data.rooms.demonicAngelStairwaySubtype = nil
-data.rooms.demonicAngelPortal = nil
+data.rooms.demonicAngelPortalType = nil
+data.rooms.demonicAngelPortalVar = nil
+data.rooms.demonicAngelPortalSubtype = nil
 
 function data.functions:GetCustomRoomData()
 	local isGreedMode = 0
@@ -69,11 +72,13 @@ function data.functions:GetCustomRoomData()
 				data.rooms.angelicDevilNumberMagnetSubtype = roomSubtype
 			elseif roomName == "Angelic Devil (portal)" then
 				data.rooms.angelicDevilPortalType = roomType
-				data.rooms.angelicDevilPortal = roomVariant
-			elseif roomName == "Demonic Angel (shop) (s)" then
+				data.rooms.angelicDevilPortalVar = roomVariant
+				data.rooms.angelicDevilPortalSubtype = roomSubtype
+
+			elseif roomName == "Demonic Angel (s)" then
 				data.rooms.demonicAngelType = roomType
 				data.rooms.demonicAngelVarMin = roomVariant
-			elseif roomName == "Demonic Angel (shop) (copy) (e)" then
+			elseif roomName == "Demonic Angel (copy) (e)" then
 				data.rooms.demonicAngelVarMax = roomVariant
 				data.rooms.demonicAngelSubtype = roomSubtype
 			elseif roomName == "Demonic Stairway (s)" then
@@ -84,7 +89,8 @@ function data.functions:GetCustomRoomData()
 				data.rooms.demonicAngelStairwaySubtype = roomSubtype
 			elseif roomName == "Demonic Angel (portal)" then
 				data.rooms.demonicAngelPortalType = roomType
-				data.rooms.demonicAngelPortal = roomVariant
+				data.rooms.demonicAngelPortalVar = roomVariant
+				data.rooms.demonicAngelPortalSubtype = roomSubtype
 		end end
 	end
 end

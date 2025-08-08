@@ -32,9 +32,9 @@ function room:swapRoomlayoutPools(index, dimension)
             newRoomData = RoomConfigHolder.GetRandomRoom(
                 roomDesc.SpawnSeed, false, StbType.SPECIAL_ROOMS,
                 rooms.angelicDevilPortalType, RoomShape.ROOMSHAPE_1x1,
-                rooms.angelicDevilPortal, rooms.angelicDevilPortal,
+                rooms.angelicDevilPortalVar, rooms.angelicDevilPortal,
                 0,10,0,
-                rooms.angelicDevilSubtype)
+                rooms.angelicDevilPortalSubtype)
         end
     elseif roomDesc.Data.Type == RoomType.ROOM_ANGEL then
         if roomDesc.Data.Subtype == 0 then
@@ -55,9 +55,9 @@ function room:swapRoomlayoutPools(index, dimension)
             newRoomData = RoomConfigHolder.GetRandomRoom(
                 roomDesc.SpawnSeed, false, StbType.SPECIAL_ROOMS,
                 rooms.demonicAngelPortalType, RoomShape.ROOMSHAPE_1x1,
-                rooms.demonicAngelPortal, rooms.demonicAngelPortal,
+                rooms.demonicAngelPortalVar, rooms.demonicAngelPortal,
                 0,10,0,
-                rooms.demonicAngelSubtype)
+                rooms.demonicAngelPortalSubtype)
         end
     else return end
 

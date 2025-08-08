@@ -42,12 +42,6 @@ switch sprites
 * door chaos
 <a/>
 
-greed
-* itempools.xml ✅
-* code should work?
-* rooms correctly?
-<a/>
-
 get sprites:
 * item
 * unlock sheet
