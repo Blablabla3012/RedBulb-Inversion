@@ -10,7 +10,7 @@ Key peaces are optained by bombing the fallen angels (demonic Angel) ✅
 
 # Demonic Angel ✅
 Type:		14 Devil Deal \
-Items:		angel pool
+Items:	    angel pool
 * take x-items, shop: gives broken hearts: >= Q3 -> 2 else 1
 * taking doesn't block angel 
 
@@ -23,6 +23,8 @@ Items:		devil pool
 
 # Synergies
 The Stairway ✅
+* Type:     15 Angel Deal
+* Items:    angel pool
 * evil beggars 
 * pound of flesh for items 
 <a/>
@@ -33,6 +35,7 @@ Sanguine Bond ✅
 <a/>
 
 # ToDo:
+swap Type of demonic Angel and angelic Devil (make consistent with Stairway) \
 unwanted behavior with dataHolder: 
 * spawn item in demonic Angel, leave, reenter: on pickup: player gets broken heart
 * spawn item in angelic Devil, leave, reenter: on pickup: blocks Angel

@@ -27,6 +27,9 @@ rbMod:AddCallback(ModCallbacks.MC_POST_SAVESLOT_LOAD, unlock.isUnlocked) -- GetP
 rbMod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, unlock.resetOnNewRun)
 rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, unlock.checkRooms_unlock)
 
+local spritesEntites = require("scripts.spritesEntities")
+rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, spritesEntities.checkRoom)
+
 --[[ SYNERGIES ]]--
 local stairway = require("scripts.stairway")
 rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, stairway.givePound)

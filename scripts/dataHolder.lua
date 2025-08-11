@@ -31,7 +31,7 @@ function dataHolder:GetEntityData_demonicAngel()
 	if roomDescData.Type ~= data.rooms.demonicAngelType or roomDescData.Subtype ~= data.rooms.demonicAngelSubtype then
 	return end
 
-	for i, entity in ipairs(Isaac.GetRoomEntities()) do
+	for _, entity in ipairs(Isaac.GetRoomEntities()) do
 		if entity.Type == 5 and entity.Variant == 100 then
 			GetEntityData(entity)
 		
@@ -53,8 +53,7 @@ function dataHolder:GetEntityData_blockAngel()
 	return end
 
 	local roomDescData = level:GetCurrentRoomDesc().Data
-	--if roomDescData.Type ~= RoomType.ROOM_ANGEL or roomDescData.Subtype ~= data.rooms.angelicDevilSubtype then
-	if not ((roomDescData.Type == data.rooms.angelicDevilType and roomDescData.Subtype == data.rooms.angelicDevilSubtype) or (roomDescData.Type == data.rooms.angelicDevilNumberMagnetType and roomDescData.Subtype == data.rooms.angelicDevilNumberMagnetSubtype)) then -- not ((angelicDevil) or (aDNumberMagnet))
+	if not ((roomDescData.Type == data.rooms.angelicDevilType and roomDescData.Subtype == data.rooms.angelicDevilSubtype) or (roomDescData.Type == data.rooms.angelicDevilNumberMagnetType and roomDescData.Subtype == data.rooms.angelicDevilNumberMagnetSubtype)) or roomDescData.Variant == data.rooms.angelicDevilPortalVar then -- not ((angelicDevil) or (aDNumberMagnet)) or PortalRoom
 	return end
 
 	for i, entity in ipairs(Isaac.GetRoomEntities()) do
