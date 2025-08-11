@@ -1,6 +1,4 @@
-local spritesEntities = {}
-sprites.angelicDevil = {}
-sprites.demonicAngel = {}
+local metaSprites = {}
 local data = require("scripts.data")
 local game = Game()
 local level = game:GetLevel()
@@ -40,7 +38,7 @@ local function getNeededEntities(room)
 end
 
 
-function spritesEntities:checkRoom()
+function metaSprites:checkRoom()
 	if not data.doInversion then
 	return end
 
@@ -120,4 +118,4 @@ function spritesEntities:checkRoom()
 end
 
 
-return spritesEntities
+return metaSprites

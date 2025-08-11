@@ -35,7 +35,6 @@ Sanguine Bond ✅
 <a/>
 
 # ToDo:
-swap Type of demonic Angel and angelic Devil (make consistent with Stairway) \
 unwanted behavior with dataHolder: 
 * spawn item in demonic Angel, leave, reenter: on pickup: player gets broken heart
 * spawn item in angelic Devil, leave, reenter: on pickup: blocks Angel
@@ -50,6 +49,9 @@ get sprites:
 * unlock sheet
 * rooms and doors
 <a/>
+
+# Stuff
+demonic Angel has to be Type devil so that no pickups in shop, stairway has to be Type devil so that pickups in shop!!!!
 
 # Basement Renovator:
 Nulls -> Blue Gaper \
