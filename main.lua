@@ -31,6 +31,7 @@ rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, unlock.checkRooms_unlock)
 local metaSprites = require("scripts.metaSprites")
 rbMod:AddCallback(ModCallbacks.MC_PRE_NEW_ROOM, metaSprites.checkRoom)
 rbMod:AddCallback(ModCallbacks.MC_PRE_BACKDROP_CHANGE, metaSprites.changeBackdrop)
+rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, metaSprites.changeStatues)
 
 --[[ SYNERGIES ]]--
 local stairway = require("scripts.stairway")
