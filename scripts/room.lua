@@ -66,7 +66,7 @@ end
 
 
 function room:swapItemRoomPools(room, roomDesc)
-    if not data.doInversion then
+    if (roomDesc.GridIndex ~= GridRooms.ROOM_DEVIL_IDX and roomDesc.GridIndex ~= GridRooms.ROOM_ANGEL_SHOP_IDX) or not data.doInversion then
     return end
 	local rooms = data.rooms
 

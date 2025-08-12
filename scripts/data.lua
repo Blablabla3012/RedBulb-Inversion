@@ -40,7 +40,7 @@ data.rooms.demonicAngelPortalType = nil
 data.rooms.demonicAngelPortalVar = nil
 data.rooms.demonicAngelPortalSubtype = nil
 
-function data.functions:GetCustomRoomData()
+function data.functions:getCustomRoomData()
 	local isGreedMode = 0
 	if Game():IsGreedMode() then
 		isGreedMode = 1
@@ -93,6 +93,18 @@ function data.functions:GetCustomRoomData()
 				data.rooms.demonicAngelPortalSubtype = roomSubtype
 		end end
 	end
+end
+
+
+data.backdrops = {}
+data.backdrops.demonicAngel = nil
+data.backdrops.demonicAngelStairway = nil
+data.backdrops.angelicDevil = nil
+
+function data.functions:getCustomBackdropData()
+	data.backdrops.demonicAngel = Isaac.GetBackdropIdByName("demonic Angel")
+	data.backdrops.demonicAngelStairway = Isaac.GetBackdropIdByName("demonic Angel Stairway")
+	data.backdrops.angelicDevil = Isaac.GetBackdropIdByName("angelic Devil")
 end
 
 

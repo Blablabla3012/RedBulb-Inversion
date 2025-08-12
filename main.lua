@@ -4,7 +4,8 @@ local rbMod = RegisterMod("Red Bulb - Inversion", 1)
 local data = require("scripts.data")
 rbMod:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE, data.functions.checkForRedBulb)
 rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, data.functions.checkForRedBulb)
-rbMod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, data.functions.GetCustomRoomData)
+rbMod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, data.functions.getCustomRoomData)
+rbMod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, data.functions.getCustomBackdropData)
 
 local dataHolder = require("scripts.dataHolder")
 rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, dataHolder.GetEntityData_demonicAngel)
@@ -27,8 +28,9 @@ rbMod:AddCallback(ModCallbacks.MC_POST_SAVESLOT_LOAD, unlock.isUnlocked) -- GetP
 rbMod:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, unlock.resetOnNewRun)
 rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, unlock.checkRooms_unlock)
 
-local sprites = require("scripts.sprites")
-rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, sprites.checkRoom)
+local metaSprites = require("scripts.metaSprites")
+rbMod:AddCallback(ModCallbacks.MC_PRE_NEW_ROOM, metaSprites.checkRoom)
+rbMod:AddCallback(ModCallbacks.MC_PRE_BACKDROP_CHANGE, metaSprites.changeBackdrop)
 
 --[[ SYNERGIES ]]--
 local stairway = require("scripts.stairway")

@@ -35,12 +35,14 @@ Sanguine Bond ✅
 <a/>
 
 # ToDo:
+angels only drop keys wenn in Type Angel room, -> custom spawn key piece
 unwanted behavior with dataHolder: 
 * spawn item in demonic Angel, leave, reenter: on pickup: player gets broken heart
 * spawn item in angelic Devil, leave, reenter: on pickup: blocks Angel
 <a/>
 
 switch sprites 
+* fallen angel fight
 * door chaos
 <a/>
 
@@ -51,7 +53,8 @@ get sprites:
 <a/>
 
 # Stuff
-demonic Angel has to be Type devil so that no pickups in shop, stairway has to be Type devil so that pickups in shop!!!!
+demonic Angel has to be Type devil so that no pickups in shop, stairway has to be Type devil so that pickups in shop!!!! \
+unknown behavior with red angel/devil rooms from red key
 
 # Basement Renovator:
 Nulls -> Blue Gaper \
