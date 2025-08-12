@@ -32,6 +32,8 @@ local metaSprites = require("scripts.metaSprites")
 rbMod:AddCallback(ModCallbacks.MC_PRE_NEW_ROOM, metaSprites.checkRoom)
 rbMod:AddCallback(ModCallbacks.MC_PRE_BACKDROP_CHANGE, metaSprites.changeBackdrop)
 rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, metaSprites.changeStatues)
+rbMod:AddCallback(ModCallbacks.MC_POST_NPC_INIT, metaSprites.changeAngelBoss, EntityType.ENTITY_URIEL)
+rbMod:AddCallback(ModCallbacks.MC_POST_NPC_INIT, metaSprites.changeAngelBoss, EntityType.ENTITY_GABRIEL)
 
 --[[ SYNERGIES ]]--
 local stairway = require("scripts.stairway")

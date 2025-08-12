@@ -138,4 +138,9 @@ function metaSprites:changeStatues()
 end
 
 
+function metaSprites:changeAngelBoss(npcEntity)
+	print("hihi")
+end
+
+
 return metaSprites
