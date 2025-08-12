@@ -2,7 +2,7 @@
 	<Info CreatedBy="Unknown" CreatedOn="6/17/2014 11:24:20 AM" Version="1" Fps="30"/>
 	<Content>
 		<Spritesheets>
-			<Spritesheet Path="props_09_sheol.png" Id="0"/>
+			<Spritesheet Path="demonicAngelStairway_props.png" Id="0"/>
 		</Spritesheets>
 		<Layers>
 			<Layer Name="Main" Id="0" SpritesheetId="0"/>
