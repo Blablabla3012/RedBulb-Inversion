@@ -76,6 +76,8 @@ local function getStatueEffects(room)
 	return statueEffects
 end
 
+local pathStatueDemonicAngel = "gfx/statues/demonicAngelStatue.png"
+local pathStatueAngelicDevil = "gfx/statues/angelicDevilStatue.png"
 function metaSprites:changeStatues()
 	if not data.doInversion then
 	return end
@@ -85,8 +87,6 @@ function metaSprites:changeStatues()
 	return end
 	
 	local room = level:GetCurrentRoom()
-	local pathStatueDemonicAngel = "gfx/statues/demonicAngelStatue.png"
-	local pathStatueAngelicDevil = "gfx/statues/angelicDevilStatue.png"
 
 
 	--[[ DEMONIC ANGEL ]]--
@@ -138,8 +138,24 @@ function metaSprites:changeStatues()
 end
 
 
+local pathDemonicAngel = "gfx/bosses/rebirth/demonicAngel.png"
+local pathDemonicAngel2 = "gfx/bosses/rebirth/demonicAngel2.png"
 function metaSprites:changeAngelBoss(npcEntity)
-	print("hihi")
+	if not data.doInversion then
+	return end
+
+	local roomDesc = level:GetCurrentRoomDesc()
+	if roomDesc.GridIndex ~= GridRooms.ROOM_DEVIL_IDX and roomDesc.GridIndex ~= GridRooms.ROOM_ANGEL_SHOP_IDX then
+	return end
+
+	local sprite = npcEntity:GetSprite()
+	if npcEntity.Type == EntityType.ENTITY_URIEL then
+		sprite:ReplaceSpritesheet(0, pathDemonicAngel, true)
+
+	elseif npcEntity.Type == EntityType.ENTITY_GABRIEL then
+		sprite:ReplaceSpritesheet(0, pathDemonicAngel2, true)
+
+	end
 end
 
 

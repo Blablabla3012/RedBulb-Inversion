@@ -42,7 +42,6 @@ unwanted behavior with dataHolder:
 <a/>
 
 switch sprites 
-* fallen angel fight
 * door chaos
 <a/>
 
