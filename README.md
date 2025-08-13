@@ -42,6 +42,7 @@ unwanted behavior with dataHolder:
 <a/>
 
 switch sprites 
+* angel (boss): delirium also triggers callback
 * door chaos
 <a/>
 
@@ -53,7 +54,8 @@ get sprites:
 
 # Stuff
 demonic Angel has to be Type devil so that no pickups in shop, stairway has to be Type devil so that pickups in shop!!!! \
-unknown behavior with red angel/devil rooms from red key
+unknown behavior with red angel/devil rooms from red key \
+mc_post_npc_init with optional arg also gets called when delirium morphs -> delirium in an angel room will change his sprite
 
 # Basement Renovator:
 Nulls -> Blue Gaper \

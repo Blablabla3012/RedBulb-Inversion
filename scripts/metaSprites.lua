@@ -148,13 +148,15 @@ function metaSprites:changeAngelBoss(npcEntity)
 	if roomDesc.GridIndex ~= GridRooms.ROOM_DEVIL_IDX and roomDesc.GridIndex ~= GridRooms.ROOM_ANGEL_SHOP_IDX then
 	return end
 
+	if not ((roomDesc.Data.Type == data.rooms.demonicAngelType and roomDesc.Data.Subtype == data.rooms.demonicAngelSubtype) or (roomDesc.Data.Type == data.rooms.demonicAngelStairwayType and roomDesc.Data.Subtype == data.rooms.demonicAngelStairwaySubtype)) then
+	return end
+
+
 	local sprite = npcEntity:GetSprite()
 	if npcEntity.Type == EntityType.ENTITY_URIEL then
 		sprite:ReplaceSpritesheet(0, pathDemonicAngel, true)
-
 	elseif npcEntity.Type == EntityType.ENTITY_GABRIEL then
 		sprite:ReplaceSpritesheet(0, pathDemonicAngel2, true)
-
 	end
 end
 

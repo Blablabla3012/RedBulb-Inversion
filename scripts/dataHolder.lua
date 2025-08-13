@@ -52,8 +52,13 @@ function dataHolder:GetEntityData_blockAngel()
 	if not data.doInversion then
 	return end
 
-	local roomDescData = level:GetCurrentRoomDesc().Data
-	if not ((roomDescData.Type == data.rooms.angelicDevilType and roomDescData.Subtype == data.rooms.angelicDevilSubtype) or (roomDescData.Type == data.rooms.angelicDevilNumberMagnetType and roomDescData.Subtype == data.rooms.angelicDevilNumberMagnetSubtype)) or roomDescData.Variant == data.rooms.angelicDevilPortalVar then -- not ((angelicDevil) or (aDNumberMagnet)) or PortalRoom
+	local roomDesc = level:GetCurrentRoomDesc()
+	if roomDesc.GridIndex ~= GridRooms.ROOM_DEVIL_IDX then
+	return end
+	if roomDesc.Data.Type == data.rooms.angelicDevilPortalType and roomDesc.Data.Variant == data.rooms.angelicDevilPortalVar then
+	return end
+
+	if not ((roomDesc.Data.Type == data.rooms.angelicDevilType and roomDesc.Data.Subtype == data.rooms.angelicDevilSubtype) or (roomDesc.Data.Type == data.rooms.angelicDevilNumberMagnetType and roomDesc.Data.Subtype == data.rooms.angelicDevilNumberMagnetSubtype)) then
 	return end
 
 	for i, entity in ipairs(Isaac.GetRoomEntities()) do
