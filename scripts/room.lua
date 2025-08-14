@@ -14,7 +14,14 @@ function room:swapRoomlayoutPools(index, dimension)
     local rooms = data.rooms
 
     if roomDesc.Data.Type == RoomType.ROOM_DEVIL then
-        if roomDesc.Data.Subtype == 0 then
+        if roomDesc.Data.Variant == 100 then
+            newRoomData = RoomConfigHolder.GetRandomRoom(
+                roomDesc.SpawnSeed, false, StbType.SPECIAL_ROOMS,
+                rooms.angelicDevilPortalType, RoomShape.ROOMSHAPE_1x1,
+                rooms.angelicDevilPortalVar, rooms.angelicDevilPortal,
+                0,10,0,
+                rooms.angelicDevilPortalSubtype)
+		elseif roomDesc.Data.Subtype == 0 then
             newRoomData = RoomConfigHolder.GetRandomRoom(
                 roomDesc.SpawnSeed, false, StbType.SPECIAL_ROOMS,
                 rooms.angelicDevilType, RoomShape.ROOMSHAPE_1x1,
@@ -28,16 +35,16 @@ function room:swapRoomlayoutPools(index, dimension)
                 rooms.angelicDevilNumberMagnetVarMin, rooms.angelicDevilNumberMagnetVarMax,
                 0,10,0,
                 rooms.angelicDevilNumberMagnetSubtype)
-        elseif roomDesc.Data.Variant == 100 then
-            newRoomData = RoomConfigHolder.GetRandomRoom(
-                roomDesc.SpawnSeed, false, StbType.SPECIAL_ROOMS,
-                rooms.angelicDevilPortalType, RoomShape.ROOMSHAPE_1x1,
-                rooms.angelicDevilPortalVar, rooms.angelicDevilPortal,
-                0,10,0,
-                rooms.angelicDevilPortalSubtype)
         end
     elseif roomDesc.Data.Type == RoomType.ROOM_ANGEL then
-        if roomDesc.Data.Subtype == 0 then
+        if roomDesc.Data.Variant == 100 then
+            newRoomData = RoomConfigHolder.GetRandomRoom(
+                roomDesc.SpawnSeed, false, StbType.SPECIAL_ROOMS,
+                rooms.demonicAngelPortalType, RoomShape.ROOMSHAPE_1x1,
+                rooms.demonicAngelPortalVar, rooms.demonicAngelPortal,
+                0,10,0,
+                rooms.demonicAngelPortalSubtype)
+		elseif roomDesc.Data.Subtype == 0 then
             newRoomData = RoomConfigHolder.GetRandomRoom(
                 roomDesc.SpawnSeed, false, StbType.SPECIAL_ROOMS,
                 rooms.demonicAngelType, RoomShape.ROOMSHAPE_1x1,
@@ -51,13 +58,6 @@ function room:swapRoomlayoutPools(index, dimension)
                 rooms.demonicAngelStairwayVarMin, rooms.demonicAngelStairwayVarMax,
                 0,10,0,
                 rooms.demonicAngelStairwaySubtype)
-        elseif roomDesc.Data.Variant == 100 then
-            newRoomData = RoomConfigHolder.GetRandomRoom(
-                roomDesc.SpawnSeed, false, StbType.SPECIAL_ROOMS,
-                rooms.demonicAngelPortalType, RoomShape.ROOMSHAPE_1x1,
-                rooms.demonicAngelPortalVar, rooms.demonicAngelPortal,
-                0,10,0,
-                rooms.demonicAngelPortalSubtype)
         end
     else return end
 

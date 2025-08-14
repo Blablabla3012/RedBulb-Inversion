@@ -22,6 +22,8 @@ local items = require("scripts.items")
 rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_SELECTION, items.demonicAngelNoRedHearts)
 rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, items.demonicAngelBrokenHearts)
 rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_RENDER, items.renderBrokenHeartsSprite)
+rbMod:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, items.spawnKeyPieces, EntityType.ENTITY_URIEL)
+rbMod:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, items.spawnKeyPieces, EntityType.ENTITY_GABRIEL)
 
 local unlock = require("scripts.unlock")
 rbMod:AddCallback(ModCallbacks.MC_POST_SAVESLOT_LOAD, unlock.isUnlocked) -- GetPersistentGameData() shall not be called outside of Callbacks

@@ -58,6 +58,7 @@ function data.functions:getCustomRoomData()
 			local roomVariant = roomConfig.Variant
 			local roomSubtype = roomConfig.Subtype
 
+			--[[ ANGELIC DEVIL ]]--
 			if roomName == "Angelic Devil (s)" then
 				data.rooms.angelicDevilType = roomType
 				data.rooms.angelicDevilVarMin = roomVariant
@@ -75,6 +76,7 @@ function data.functions:getCustomRoomData()
 				data.rooms.angelicDevilPortalVar = roomVariant
 				data.rooms.angelicDevilPortalSubtype = roomSubtype
 
+			--[[ DEMONIC ANGEL ]]--
 			elseif roomName == "Demonic Angel (s)" then
 				data.rooms.demonicAngelType = roomType
 				data.rooms.demonicAngelVarMin = roomVariant

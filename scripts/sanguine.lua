@@ -30,12 +30,7 @@ function sanguine:checkForSanguine()
 	if not data.doInversion then
 	return end
 
-	local num_SanguineBond = PlayerManager.GetNumCollectibles(CollectibleType.COLLECTIBLE_SANGUINE_BOND)
-	if num_SanguineBond == 0 then
-		hasSanguine = false
-	else
-		hasSanguine = true
-	end
+	hasSanguine = PlayerManager.AnyoneHasCollectible(CollectibleType.COLLECTIBLE_SANGUINE_BOND)
 end
 
 function sanguine:spawnConfessional()
@@ -45,8 +40,9 @@ function sanguine:spawnConfessional()
 	return end
 
 	local roomDesc = level:GetCurrentRoomDesc()
-	if roomDesc.GridIndex ~= GridRooms.ROOM_DEVIL_IDX or
-	(roomDesc.Data.Type ~= data.rooms.angelicDevilType and roomDesc.Data.Subtype ~= data.rooms.angelicDevilSubtype) or 
+	if roomDesc.GridIndex ~= GridRooms.ROOM_DEVIL_IDX then
+	return end
+	if (roomDesc.Data.Type ~= data.rooms.angelicDevilType and roomDesc.Data.Subtype ~= data.rooms.angelicDevilSubtype) or 
 	(roomDesc.Data.Type ~= data.rooms.angelicDevilNumberMagnetType and roomDesc.Data.Subtype ~= data.rooms.angelicDevilNumberMagnetSubtype) or
 	roomDesc.Data.Variant == data.rooms.angelicDevilPortalVar then
 	return end
