@@ -41,11 +41,6 @@ unwanted behavior with dataHolder:
 * spawn item in angelic Devil, leave, reenter: on pickup: blocks Angel
 <a/>
 
-switch sprites 
-* angel (boss): delirium also triggers callback
-* door chaos
-<a/>
-
 get sprites:
 * item
 * unlock sheet
@@ -53,7 +48,7 @@ get sprites:
 <a/>
 
 # Stuff
-demonic Angel has to be Type devil so that no pickups in shop, stairway has to be Type devil so that pickups in shop!!!! \
+demonic Angel has to be Type devil so that no pickups in shop, stairway has to be Type devil so that pickups in shop -> one has pots, one has skulls \
 unknown behavior with red angel/devil rooms from red key \
 mc_post_npc_init with optional arg also gets called when delirium morphs -> delirium in an angel room will change his sprite
 

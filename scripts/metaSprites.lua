@@ -36,7 +36,7 @@ function metaSprites:changeBackdrop()
 	if not data.doInversion then
 	return end
 
-	--[[ ANGELIC DEVIL ]]--
+	--[[ DEMONIC ANGEL ]]--
 	if currentRoom == "demonicAngelPortal" then
 		return data.backdrops.demonicAngel
 	elseif currentRoom == "demonicAngel" then
@@ -44,7 +44,7 @@ function metaSprites:changeBackdrop()
 	elseif currentRoom == "demonicAngelStairway" then
 		return data.backdrops.demonicAngelStairway
 
-	--[[ DEMONIC ANGEL ]]--
+	--[[ ANGELIC DEVIL ]]--
 	elseif currentRoom == "angelicDevilPortal" then
 		return data.backdrops.angelicDevil
 	elseif currentRoom == "angelicDevil" then
@@ -52,6 +52,45 @@ function metaSprites:changeBackdrop()
 	elseif currentRoom == "angelicDevilNumberMagnet" then
 		return data.backdrops.angelicDevil
 	end
+end
+
+local pathAngelicDevilDoor = "gfx/grid/angelicDevil_door.png"
+local pathDemonicAngelDoor = "gfx/grid/demonicAngel_door.png"
+local pathDemonicAngelStairwayDoor = "gfx/grid/demonicAngelStairway_door.png"
+function metaSprites:changeDoorsInside()
+	if not data.doInversion then
+	return end
+
+	local rightPath = nil
+
+	--[[ DEMONIC ANGEL ]]--
+	if currentRoom == "demonicAngelPortal" then
+		rightPath = pathDemonicAngelDoor
+	elseif currentRoom == "demonicAngel" then
+		rightPath = pathDemonicAngelDoor
+	elseif currentRoom == "demonicAngelStairway" then
+		rightPath = pathDemonicAngelStairwayDoor
+
+	--[[ ANGELIC DEVIL ]]--
+	elseif currentRoom == "angelicDevilPortal" then
+		rightPath = pathAngelicDevilDoor
+	elseif currentRoom == "angelicDevil" then
+		rightPath = pathAngelicDevilDoor
+	elseif currentRoom == "angelicDevilNumberMagnet" then
+		rightPath = pathAngelicDevilDoor
+	else 
+		return 
+	end
+
+	local room = game:GetRoom()
+	for i = 0, DoorSlot.NUM_DOOR_SLOTS -1 do
+		local door = room:GetDoor(i)
+		if door ~= nil then
+			local sprite = door:GetSprite()
+			for i = 0, 4 do
+				sprite:ReplaceSpritesheet(i, rightPath, true)
+			end
+	end end
 end
 
 
@@ -88,52 +127,45 @@ function metaSprites:changeStatues()
 	
 	local room = level:GetCurrentRoom()
 
-
 	--[[ DEMONIC ANGEL ]]--
-	if roomDesc.Data.Type == data.rooms.demonicAngelPortalType and roomDesc.Data.Subtype == data.rooms.demonicAngelPortalSubtype and roomDesc.Data.Variant == data.rooms.demonicAngelPortalVar then
+	if currentRoom == "demonicAngelPortal" then
+		local statueEffects = getStatueEffects(room)
+		for _, effect in ipairs(statueEffects.angel) do
+			local sprite = effect:GetSprite()
+			sprite:ReplaceSpritesheet(0, pathStatueDemonicAngel, true)
+		end	
+	elseif currentRoom == "demonicAngel" then
+		local statueEffects = getStatueEffects(room)
+		for _, effect in ipairs(statueEffects.angel) do
+			local sprite = effect:GetSprite()
+			sprite:ReplaceSpritesheet(0, pathStatueDemonicAngel, true)
+		end	
+	elseif currentRoom == "demonicAngelStairway" then
 		local statueEffects = getStatueEffects(room)
 		for _, effect in ipairs(statueEffects.angel) do
 			local sprite = effect:GetSprite()
 			sprite:ReplaceSpritesheet(0, pathStatueDemonicAngel, true)
 		end
-	
-	elseif roomDesc.Data.Type == data.rooms.demonicAngelType and roomDesc.Data.Subtype == data.rooms.demonicAngelSubtype then
-		local statueEffects = getStatueEffects(room)
-		for _, effect in ipairs(statueEffects.angel) do
-			local sprite = effect:GetSprite()
-			sprite:ReplaceSpritesheet(0, pathStatueDemonicAngel, true)
-		end
-	
-	elseif roomDesc.Data.Type == data.rooms.demonicAngelStairwayType and roomDesc.Data.Subtype == data.rooms.demonicAngelStairwaySubtype then
-		local statueEffects = getStatueEffects(room)
-		for _, effect in ipairs(statueEffects.angel) do
-			local sprite = effect:GetSprite()
-			sprite:ReplaceSpritesheet(0, pathStatueDemonicAngel, true)
-		end
-
 
 	--[[ ANGELIC DEVIL ]]--
-	elseif roomDesc.Data.Type == data.rooms.angelicDevilPortalType and roomDesc.Data.Subtype == data.rooms.angelicDevilPortalSubtype and roomDesc.Data.Variant == data.rooms.angelicDevilPortalVar then
+	elseif currentRoom == "angelicDevilPortal" then
 		local statueEffects = getStatueEffects(room)
 		for _, effect in ipairs(statueEffects.devil) do
 			local sprite = effect:GetSprite()
 			sprite:ReplaceSpritesheet(0, pathStatueAngelicDevil, true)
-		end
-	
-	elseif roomDesc.Data.Type == data.rooms.angelicDevilType and roomDesc.Data.Subtype == data.rooms.angelicDevilSubtype then
+		end	
+	elseif currentRoom == "angelicDevil" then
 		local statueEffects = getStatueEffects(room)
 		for _, effect in ipairs(statueEffects.devil) do
 			local sprite = effect:GetSprite()
 			sprite:ReplaceSpritesheet(0, pathStatueAngelicDevil, true)
-		end
-	
-	elseif roomDesc.Data.Type == data.rooms.angelicDevilNumberMagnetType and roomDesc.Data.Subtype == data.rooms.angelicDevilNumberMagnetSubtype then
+		end	
+	elseif currentRoom == "angelicDevilNumberMagnet" then
 		local statueEffects = getStatueEffects(room)
 		for _, effect in ipairs(statueEffects.devil) do
 			local sprite = effect:GetSprite()
 			sprite:ReplaceSpritesheet(0, pathStatueAngelicDevil, true)
-		end
-	
+		end	
     end
 end
 
@@ -158,6 +190,74 @@ function metaSprites:changeAngelBoss(npcEntity)
 	elseif npcEntity.Type == EntityType.ENTITY_GABRIEL then
 		sprite:ReplaceSpritesheet(0, pathDemonicAngel2, true)
 	end
+end
+
+
+function metaSprites:changeDoorsPostBoss()
+	if not data.doInversion then
+	return end
+
+	local room = game:GetRoom()
+	if room:GetType() ~= RoomType.ROOM_BOSS then
+	return end
+
+	for i = 0, DoorSlot.NUM_DOOR_SLOTS - 1 do
+		local door = room:GetDoor(i)
+		if door ~= nil then
+			if door.TargetRoomIndex == GridRooms.ROOM_DEVIL_IDX then
+				if door.TargetRoomType == RoomType.ROOM_DEVIL then
+					local sprite = door:GetSprite()
+					for i = 0, 4 do
+						sprite:ReplaceSpritesheet(i, pathAngelicDevilDoor, true)
+					end
+				elseif door.TargetRoomType == RoomType.ROOM_ANGEL then
+					local sprite = door:GetSprite()
+					for i = 0, 4 do
+						sprite:ReplaceSpritesheet(i, pathDemonicAngelDoor, true)
+					end
+				end
+	end end end
+end
+
+function metaSprites:changeDoorsOutside()
+	if not data.doInversion then
+	return end
+
+	local room = game:GetRoom()
+	if room:GetType() ~= RoomType.ROOM_BOSS then
+	return end
+
+	for i = 0, DoorSlot.NUM_DOOR_SLOTS - 1 do
+		local door = room:GetDoor(i)
+		if door ~= nil then
+			if door.TargetRoomIndex == GridRooms.ROOM_DEVIL_IDX then
+				if door.TargetRoomType == RoomType.ROOM_DEVIL then
+					local targetRoomDesc = level:GetRoomByIdx(door.TargetRoomIndex, 0) --0 = main dimension
+					if targetRoomDesc.VisitedCount == 0 then
+						local sprite = door:GetSprite()
+						for i = 0, 4 do
+							sprite:ReplaceSpritesheet(i, pathAngelicDevilDoor, true)
+						end
+					else
+						local sprite = door:GetSprite()
+						for i = 0, 4 do
+							sprite:ReplaceSpritesheet(i, pathDemonicAngelDoor, true)
+						end
+					end
+				elseif door.TargetRoomType == RoomType.ROOM_ANGEL then
+					local targetRoomDesc = level:GetRoomByIdx(door.TargetRoomIndex, 0) --0 = main dimension
+					if targetRoomDesc.VisitedCount == 0 then
+						local sprite = door:GetSprite()
+						for i = 0, 4 do
+							sprite:ReplaceSpritesheet(i, pathDemonicAngelDoor, true)
+						end
+					else
+						local sprite = door:GetSprite()
+						for i = 0, 4 do
+							sprite:ReplaceSpritesheet(i, pathAngelicDevilDoor, true)
+						end
+				end end
+	end end end
 end
 
 
