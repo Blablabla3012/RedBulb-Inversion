@@ -36,6 +36,11 @@ function items:demonicAngelBrokenHearts(player, entity)
 	
 	dataHolder.Data[ptrHash].touched = true
 	player:AddBrokenHearts(entityData.brokenHearts)
+
+	dataHolder.RoomData.collectibles[entity.SubType] = dataHolder.RoomData.collectibles[entity.SubType] - 1
+	if dataHolder.RoomData.collectibles[entity.SubType] == 0 then
+		dataHolder.RoomData.collectibles[entity.SubType] = nil
+	end
 end
 
 

@@ -40,16 +40,18 @@ unwanted behavior with dataHolder:
 * spawn item in angelic Devil, leave, reenter: on pickup: blocks Angel
 <a/>
 
+check behavior with red angel/devil rooms from red key \
+
 get sprites:
 * item
 * unlock sheet
 * rooms and doors
+    * demonic Angel has to be Type devil so that no pickups in shop, stairway has to be Type devil so that pickups in shop -> one has pots, one has skulls \
 <a/>
 
-# Stuff
-demonic Angel has to be Type devil so that no pickups in shop, stairway has to be Type devil so that pickups in shop -> one has pots, one has skulls \
-unknown behavior with red angel/devil rooms from red key \
-mc_post_npc_init with optional arg also gets called when delirium morphs -> delirium in an angel room will change his sprite
+# kinda bugs
+mc_post_npc_init with optional arg also gets called when delirium morphs -> delirium in an demonic Angel room will change his sprite
+if item gets spawned in demonic Angel/angelic Devil, and player exits game and reenters run these items will also acitvate room effects (broken hearts, block angel)
 
 # Basement Renovator:
 Nulls -> Blue Gaper \

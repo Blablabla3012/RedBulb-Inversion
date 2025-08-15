@@ -35,7 +35,7 @@ function dataHolder:GetEntityData_demonicAngel()
 	return end
 
 	if roomDesc.VisitedCount ~= dataHolder.RoomData.visitedCount or roomDesc.VisitedCount == 1 then
-		local i = 1
+		dataHolder.RoomData.collectibles = {}
 		for _, entity in ipairs(Isaac.GetRoomEntities()) do
 			if entity.Type == 5 and entity.Variant == 100 then
 				GetEntityData(entity)
@@ -50,29 +50,42 @@ function dataHolder:GetEntityData_demonicAngel()
 				else
 					dataHolder.Data[ptrHash].brokenHearts = 1
 				end
-				dataHolder.RoomData.collectibles[i] = entity.SubType
-				i = i + 1
+
+				if dataHolder.RoomData.collectibles[entity.SubType] == nil then
+					dataHolder.RoomData.collectibles[entity.SubType] = 1
+				else
+					dataHolder.RoomData.collectibles[entity.SubType] = dataHolder.RoomData.collectibles[entity.SubType] + 1
+				end
 		end end 
 		dataHolder.RoomData.visitedCount = roomDesc.VisitedCount + 1
 	else
+		local collectiblesTmp = {}
+		for i, j in pairs(dataHolder.RoomData.collectibles) do
+			collectiblesTmp[i] = j
+		end
+
 		for _, entity in ipairs(Isaac.GetRoomEntities()) do
 			if entity.Type == 5 and entity.Variant == 100 then
-				for _, safedCollectibleType in pairs(dataHolder.RoomData.collectibles) do
-					if entity.SubType == safedCollectibleType then
-						GetEntityData(entity)
+				for collectibleType, collectibleCount in pairs(collectiblesTmp) do
+					if entity.SubType == collectibleType then
+						if collectibleCount > 0 then
+							GetEntityData(entity)
 					
-						local ptrHash = GetPtrHash(entity)
-						dataHolder.Data[ptrHash].position = entity.Position
-			
-						local itemConfig = Isaac.GetItemConfig()
-						local itemConfig_Item = itemConfig:GetCollectible(entity.SubType)
-						if itemConfig_Item.Quality >= 3 then
-							dataHolder.Data[ptrHash].brokenHearts = 2
-						else
-							dataHolder.Data[ptrHash].brokenHearts = 1
-						end
-					end
-		end end end
+							local ptrHash = GetPtrHash(entity)
+							dataHolder.Data[ptrHash].position = entity.Position
+				
+							local itemConfig = Isaac.GetItemConfig()
+							local itemConfig_Item = itemConfig:GetCollectible(entity.SubType)
+							if itemConfig_Item.Quality >= 3 then
+								dataHolder.Data[ptrHash].brokenHearts = 2
+							else
+								dataHolder.Data[ptrHash].brokenHearts = 1
+							end
+					
+							collectiblesTmp[collectibleType] = collectibleCount - 1
+				end end end
+		end end
+		dataHolder.RoomData.visitedCount = roomDesc.VisitedCount + 1
 	end
 end
 
