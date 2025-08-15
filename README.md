@@ -35,7 +35,6 @@ Sanguine Bond ✅
 <a/>
 
 # ToDo:
-angels only drop keys wenn in Type Angel room, -> custom spawn key piece
 unwanted behavior with dataHolder: 
 * spawn item in demonic Angel, leave, reenter: on pickup: player gets broken heart
 * spawn item in angelic Devil, leave, reenter: on pickup: blocks Angel
