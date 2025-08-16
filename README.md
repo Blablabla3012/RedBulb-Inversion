@@ -35,11 +35,6 @@ Sanguine Bond ✅
 <a/>
 
 # ToDo:
-unwanted behavior with dataHolder: 
-* spawn item in demonic Angel, leave, reenter: on pickup: player gets broken heart
-* spawn item in angelic Devil, leave, reenter: on pickup: blocks Angel
-<a/>
-
 check behavior with red angel/devil rooms from red key \
 
 get sprites:
@@ -51,7 +46,7 @@ get sprites:
 
 # kinda bugs
 mc_post_npc_init with optional arg also gets called when delirium morphs -> delirium in an demonic Angel room will change his sprite
-if item gets spawned in demonic Angel/angelic Devil, and player exits game and reenters run these items will also acitvate room effects (broken hearts, block angel)
+spawn item in devil/angel room; leave + reenter run inside devil/angel room or quit game and reenter run; all items in devil/angel room will have the negative effects
 
 # Basement Renovator:
 Nulls -> Blue Gaper \
