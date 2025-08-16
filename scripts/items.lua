@@ -5,7 +5,6 @@ local game = Game()
 local level = game:GetLevel()
 
 
-																																																--this mod was made by Blablabla3012
 function items:demonicAngelNoRedHearts(pickup, variant)
 	if not data.doInversion then
 	return end

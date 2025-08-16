@@ -50,4 +50,3 @@ rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, sanguine.blockSanguineBond)
 rbMod:AddCallback(ModCallbacks.MC_POST_ADD_COLLECTIBLE, sanguine.checkForSanguine)
 rbMod:AddCallback(ModCallbacks.MC_POST_PLAYER_INIT, sanguine.checkForSanguine)
 rbMod:AddCallback(ModCallbacks.MC_POST_NEW_ROOM, sanguine.spawnConfessional)
-																																																						--this mod was made by Blablabla3012

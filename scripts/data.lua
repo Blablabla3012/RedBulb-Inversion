@@ -110,5 +110,4 @@ function data.functions:getCustomBackdropData()
 end
 
 
-																																																						--this mod was made by Blablabla3012
 return data
