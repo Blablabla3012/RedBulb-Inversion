@@ -102,13 +102,43 @@ function dataHolder:GetEntityData_blockAngel()
 	if not ((roomDesc.Data.Type == data.rooms.angelicDevilType and roomDesc.Data.Subtype == data.rooms.angelicDevilSubtype) or (roomDesc.Data.Type == data.rooms.angelicDevilNumberMagnetType and roomDesc.Data.Subtype == data.rooms.angelicDevilNumberMagnetSubtype)) then
 	return end
 
-	for i, entity in ipairs(Isaac.GetRoomEntities()) do
-		if entity.Type == 5 and entity.Variant == 100 then
-			GetEntityData(entity)
+	if roomDesc.VisitedCount ~= dataHolder.RoomData.visitedCount or roomDesc.VisitedCount == 1 then
+		dataHolder.RoomData.collectibles = {}
+		for _, entity in ipairs(Isaac.GetRoomEntities()) do
+			if entity.Type == 5 and entity.Variant == 100 then
+				GetEntityData(entity)
 		
-			local ptrHash = GetPtrHash(entity)
-			dataHolder.Data[ptrHash].blockAngel = true
-	end end
+				local ptrHash = GetPtrHash(entity)
+				dataHolder.Data[ptrHash].blockAngel = true
+
+				if dataHolder.RoomData.collectibles[entity.SubType] == nil then
+					dataHolder.RoomData.collectibles[entity.SubType] = 1
+				else
+					dataHolder.RoomData.collectibles[entity.SubType] = dataHolder.RoomData.collectibles[entity.SubType] + 1
+				end
+		end end
+		dataHolder.RoomData.visitedCount = roomDesc.VisitedCount + 1
+	else
+		local collectiblesTmp = {}
+		for i, j in pairs(dataHolder.RoomData.collectibles) do
+			collectiblesTmp[i] = j
+		end
+
+		for _, entity in ipairs(Isaac.GetRoomEntities()) do
+			if entity.Type == 5 and entity.Variant == 100 then
+				for collectibleType, collectibleCount in pairs(collectiblesTmp) do
+					if entity.SubType == collectibleType then
+						if collectibleCount > 0 then
+							GetEntityData(entity)
+
+							local ptrHash = GetPtrHash(entity)
+							dataHolder.Data[ptrHash].blockAngel = true
+
+							collectiblesTmp[collectibleType] = collectibleCount - 1
+				end end end
+		end end
+		dataHolder.RoomData.visitedCount = roomDesc.VisitedCount + 1
+	end
 end
 
 
@@ -116,5 +146,6 @@ function dataHolder:ClearDataOfEntity(entity)
 	local ptrHash = GetPtrHash(entity)
 	dataHolder.Data[ptrHash] = nil
 end
+
 
 return dataHolder

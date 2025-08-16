@@ -16,14 +16,14 @@ rbMod:AddCallback(ModCallbacks.MC_POST_ENTITY_REMOVE, dataHolder.ClearDataOfEnti
 local room = require("scripts.room")
 rbMod:AddCallback(ModCallbacks.MC_PRE_CHANGE_ROOM, room.swapRoomlayoutPools)
 rbMod:AddCallback(ModCallbacks.MC_PRE_NEW_ROOM, room.swapItemRoomPools)
-rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, room.blockDemonicAngel)
+rbMod:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, room.spawnKeyPieces, EntityType.ENTITY_URIEL)
+rbMod:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, room.spawnKeyPieces, EntityType.ENTITY_GABRIEL)
 
 local items = require("scripts.items")
 rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_SELECTION, items.demonicAngelNoRedHearts)
 rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, items.demonicAngelBrokenHearts)
 rbMod:AddCallback(ModCallbacks.MC_POST_PICKUP_RENDER, items.renderBrokenHeartsSprite)
-rbMod:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, items.spawnKeyPieces, EntityType.ENTITY_URIEL)
-rbMod:AddCallback(ModCallbacks.MC_POST_NPC_DEATH, items.spawnKeyPieces, EntityType.ENTITY_GABRIEL)
+rbMod:AddCallback(ModCallbacks.MC_PRE_PLAYER_COLLISION, items.blockDemonicAngel)
 
 local unlock = require("scripts.unlock")
 rbMod:AddCallback(ModCallbacks.MC_POST_SAVESLOT_LOAD, unlock.isUnlocked) -- GetPersistentGameData() shall not be called outside of Callbacks

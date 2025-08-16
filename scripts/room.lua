@@ -82,18 +82,43 @@ function room:swapItemRoomPools(room, roomDesc)
 end
 
 
-function room:blockDemonicAngel(player, entity)
-	if not data.doInversion or entity.Type ~= 5 or entity.Variant ~= 100 then
+function room:spawnKeyPieces(npcEntity)
+	if not data.doInversion then
 	return end
 
-	local ptrHash = GetPtrHash(entity)
-	local entityData = dataHolder.Data[ptrHash]
-	if entityData == nil then
+	local roomDesc = level:GetCurrentRoomDesc()
+	if roomDesc.GridIndex ~= GridRooms.ROOM_DEVIL_IDX then
 	return end
-	if not entityData.blockAngel then
+	if roomDesc.Data.Type ~= data.rooms.demonicAngelType or roomDesc.Data.Subtype ~= data.rooms.demonicAngelSubtype then
+	return end
+	if roomDesc.Data.Type == data.rooms.demonicAngelPortalType and roomDesc.Data.Subtype == data.rooms.demonicAngelPortalSubtype and roomDesc.Data.Variant == data.rooms.demonicAngelPortalVar then
 	return end
 
-	game:AddDevilRoomDeal()
+	local hasKey1 = PlayerManager.AnyoneHasCollectible(CollectibleType.COLLECTIBLE_KEY_PIECE_1)
+	local hasKey2 = PlayerManager.AnyoneHasCollectible(CollectibleType.COLLECTIBLE_KEY_PIECE_2)
+	local hasFeather = PlayerManager.AnyoneHasTrinket(TrinketType.TRINKET_FILIGREE_FEATHERS)
+	
+	if hasFeather and (hasKey1 == hasKey2) then
+		local itemPool = game:GetItemPool()
+		local collectible = itemPool:GetCollectible(ItemPoolType.POOL_ANGEL, true --[[decrease]], npcEntity:GetDropRNG():GetSeed())
+		game:Spawn(EntityType.ENTITY_PICKUP, 100 --[[Variant]], npcEntity.Position, Vector(0,0) --[[Velocity]], nil --[[parent]], collectible, game:GetRoom():GetSpawnSeed())
+	else
+		if hasKey1 and hasKey2 then
+		return end
+
+		if hasKey1 then
+			game:Spawn(EntityType.ENTITY_PICKUP, 100 --[[Variant]], npcEntity.Position, Vector(0,0) --[[Velocity]], nil --[[parent]], CollectibleType.COLLECTIBLE_KEY_PIECE_2, game:GetRoom():GetSpawnSeed())
+		elseif hasKey2 then
+			game:Spawn(EntityType.ENTITY_PICKUP, 100 --[[Variant]], npcEntity.Position, Vector(0,0) --[[Velocity]], nil --[[parent]], CollectibleType.COLLECTIBLE_KEY_PIECE_1, game:GetRoom():GetSpawnSeed())
+		else
+			rng = npcEntity:GetDropRNG()
+			if rng:RandomInt(2) == 0 then -- output is 0 and 1
+				game:Spawn(EntityType.ENTITY_PICKUP, 100 --[[Variant]], npcEntity.Position, Vector(0,0) --[[Velocity]], nil --[[parent]], CollectibleType.COLLECTIBLE_KEY_PIECE_1, game:GetRoom():GetSpawnSeed())
+			else
+				game:Spawn(EntityType.ENTITY_PICKUP, 100 --[[Variant]], npcEntity.Position, Vector(0,0) --[[Velocity]], nil --[[parent]], CollectibleType.COLLECTIBLE_KEY_PIECE_2, game:GetRoom():GetSpawnSeed())
+			end
+		end
+	end
 end
 
 
