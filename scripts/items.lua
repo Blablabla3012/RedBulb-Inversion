@@ -5,6 +5,7 @@ local game = Game()
 local level = game:GetLevel()
 
 
+																																																--this mod was made by Blablabla3012
 function items:demonicAngelNoRedHearts(pickup, variant)
 	if not data.doInversion then
 	return end
@@ -102,7 +103,6 @@ function items:blockDemonicAngel(player, entity)
 
 	dataHolder.Data[ptrHash].touched = true
 	game:AddDevilRoomDeal()
-	print("AddDevilRoomDeal")
 
 	dataHolder.RoomData.collectibles[entity.SubType] = dataHolder.RoomData.collectibles[entity.SubType] - 1
 	if dataHolder.RoomData.collectibles[entity.SubType] == 0 then

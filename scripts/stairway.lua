@@ -19,6 +19,7 @@ function stairway:givePound(index, dimension)
 	end
 end
 
+																																												--this mod was made by Blablabla3012
 function stairway:givePoundOnInit()
 	if not data.doInversion then
 	return end
