@@ -46,6 +46,7 @@ get sprites:
 
 # kinda bugs
 mc_post_npc_init with optional arg also gets called when delirium morphs -> delirium in an demonic Angel room will change his sprite
+
 spawn item in devil/angel room; leave + reenter run inside devil/angel room or quit game and reenter run; all items in devil/angel room will have the negative effects
 
 # Basement Renovator:
