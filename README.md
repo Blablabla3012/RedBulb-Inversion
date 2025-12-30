@@ -31,7 +31,7 @@ The Stairway ✅
 
 Sanguine Bond ✅
 * no sanguine bond spikes in demonic Angel
-* spawn confessional in demonic Angel
+* spawn confessional in demonic Angel and Stairways
 <a/>
 
 # ToDo:
